@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cii6w56etu1mq"]
+
+[ext_resource type="Texture2D" uid="uid://dxexgi117uktt" path="res://icon.svg" id="1_m2fj8"]
+[ext_resource type="Texture2D" uid="uid://ctaltvum6vlrr" path="res://250px-Fodder_growing.jpg" id="1_ohio4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1ieq"]
+size = Vector2(115.8, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv64t"]
+size = Vector2(130, 126)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(600, 600)
+scale = Vector2(10, 1)
+
+[node name="Icon3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-2.2, -27)
+scale = Vector2(0.4624, 1.01429)
+texture = ExtResource("1_ohio4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2.3, -29)
+shape = SubResource("RectangleShape2D_r1ieq")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(158, 426)
+texture = ExtResource("1_m2fj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(157, 425)
+shape = SubResource("RectangleShape2D_xv64t")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(428, 430)
+texture = ExtResource("1_m2fj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(427, 429)
+shape = SubResource("RectangleShape2D_xv64t")
