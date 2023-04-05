@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cii6w56etu1mq"]
+[gd_scene load_steps=10 format=3 uid="uid://cii6w56etu1mq"]
 
 [ext_resource type="Texture2D" uid="uid://dxexgi117uktt" path="res://icon.svg" id="1_m2fj8"]
 [ext_resource type="Texture2D" uid="uid://d3gqfdx1sqh4e" path="res://eLesson_2020-0713_2014-0127-1024x930.png" id="3_ny022"]
+[ext_resource type="PackedScene" uid="uid://dx0rs7bmjp5x2" path="res://Escenas/pause_menu.tscn" id="4_pp08s"]
 [ext_resource type="Texture2D" uid="uid://cjeg5cnxiwdvm" path="res://Assets/village props/Texture/TX Tileset Ground.png" id="4_s5gtq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv64t"]
@@ -187,3 +188,7 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_ayd2t")
 format = 2
 layer_0/tile_data = PackedInt32Array(589841, 131073, 2, 524305, 131073, 0, 589840, 65537, 2, 524304, 65537, 0, 589839, 65537, 2, 524303, 65537, 0, 589838, 65537, 2, 524302, 65537, 0, 589837, 65537, 2, 524301, 65537, 0, 589836, 65537, 2, 524300, 65537, 0, 589835, 65537, 2, 524299, 65537, 0, 589834, 65537, 2, 524298, 65537, 0, 589833, 65537, 2, 524297, 65537, 0, 589832, 65537, 2, 524296, 65537, 0, 589831, 65537, 2, 524295, 65537, 0, 589830, 65537, 2, 524294, 65537, 0, 589829, 65537, 2, 524293, 65537, 0, 589828, 65537, 2, 524292, 65537, 0, 589827, 65537, 2, 524291, 65537, 0, 589826, 65537, 2, 524290, 65537, 0, 589825, 65537, 2, 524289, 65537, 0, 589824, 1, 2, 524288, 1, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_pp08s")]

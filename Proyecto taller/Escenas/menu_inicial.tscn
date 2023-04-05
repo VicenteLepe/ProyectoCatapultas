@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7kn5y5f5pma5"]
+
+[ext_resource type="Script" path="res://Escenas/menu_inicial.gd" id="1_3n26k"]
+[ext_resource type="PackedScene" uid="uid://cii6w56etu1mq" path="res://Escenas/Main.tscn" id="2_khquk"]
+
+[node name="MenuInicial" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3n26k")
+main_scene = ExtResource("2_khquk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Siege Engineers"
+
+[node name="BotonStart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Game"
+
+[node name="BotonExit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit"
