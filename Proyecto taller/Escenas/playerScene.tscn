@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dusqgtabk1spl"]
+[gd_scene load_steps=6 format=3 uid="uid://dusqgtabk1spl"]
 
 [ext_resource type="Texture2D" uid="uid://dfmm0f2tubqfs" path="res://Assets/village props/Texture/props cortados/TX Wheel.png" id="2_amlt6"]
 [ext_resource type="Script" path="res://Escenas/Base.gd" id="2_nqjti"]
 [ext_resource type="Texture2D" uid="uid://c08tvht7tlshn" path="res://Assets/village props/Texture/props cortados/TX Base.png" id="3_7fwh6"]
-[ext_resource type="Script" path="res://Escenas/CharacterBody2D.gd" id="4_d7sxv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tud71"]
 
@@ -58,6 +57,3 @@ shape = SubResource("RectangleShape2D_ulc1x")
 visibility_layer = 512
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_7fwh6")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("4_d7sxv")
