@@ -126,3 +126,6 @@ layer_0/tile_data = PackedInt32Array(327680, 1, 2, 327681, 65537, 2, 327682, 655
 
 [node name="Catapult" parent="." instance=ExtResource("3_3qy3l")]
 position = Vector2(94, 218)
+
+[node name="Catapult2" parent="." instance=ExtResource("3_3qy3l")]
+position = Vector2(145, 158)
