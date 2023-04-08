@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3x8g7qvh07cd"
-path="res://.godot/imported/glacial_mountains_lightened.png-fc94db7bd2ba140f2141563f1998a6de.ctex"
+uid="uid://bdlknm7cre37i"
+path="res://.godot/imported/Middleground.png-c35dc20cc462f1aba562d0ff515147a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains_lightened.png"
-dest_files=["res://.godot/imported/glacial_mountains_lightened.png-fc94db7bd2ba140f2141563f1998a6de.ctex"]
+source_file="res://Assets/backgrounds/Taiga-Asset-Pack_vnitti/PNG/Middleground.png"
+dest_files=["res://.godot/imported/Middleground.png-c35dc20cc462f1aba562d0ff515147a6.ctex"]
 
 [params]
 

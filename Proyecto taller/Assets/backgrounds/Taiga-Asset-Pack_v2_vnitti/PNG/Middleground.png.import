@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qjgi3hn5ncuc"
-path="res://.godot/imported/clouds_mg_1.png-9eb4cd37df885bcadbfbad697d2a3143.ctex"
+uid="uid://d05s0fe3xes54"
+path="res://.godot/imported/Middleground.png-0de43583a8bacd5261158d04bf52ccac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1.png"
-dest_files=["res://.godot/imported/clouds_mg_1.png-9eb4cd37df885bcadbfbad697d2a3143.ctex"]
+source_file="res://Assets/backgrounds/Taiga-Asset-Pack_v2_vnitti/PNG/Middleground.png"
+dest_files=["res://.godot/imported/Middleground.png-0de43583a8bacd5261158d04bf52ccac.ctex"]
 
 [params]
 

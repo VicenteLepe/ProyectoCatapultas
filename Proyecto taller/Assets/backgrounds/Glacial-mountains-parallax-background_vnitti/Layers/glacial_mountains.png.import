@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp67334q8nbg8"
-path="res://.godot/imported/sky_lightened.png-aab99807507616fba07666c52bcf243e.ctex"
+uid="uid://d2plnxrxchd70"
+path="res://.godot/imported/glacial_mountains.png-4f1b4a34033c8153a89aae3a73b04afe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Glacial-mountains-parallax-background_vnitti/Layers/sky_lightened.png"
-dest_files=["res://.godot/imported/sky_lightened.png-aab99807507616fba07666c52bcf243e.ctex"]
+source_file="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains.png"
+dest_files=["res://.godot/imported/glacial_mountains.png-4f1b4a34033c8153a89aae3a73b04afe.ctex"]
 
 [params]
 

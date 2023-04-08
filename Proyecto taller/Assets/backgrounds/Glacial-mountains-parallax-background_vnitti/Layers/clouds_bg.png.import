@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b548jhwtkogbm"
-path="res://.godot/imported/clouds_bg.png-bf0453be1f92c55d7f93c500b794569f.ctex"
+path="res://.godot/imported/clouds_bg.png-c81a8ea0284d38d2cd2c69daf5709b88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Glacial-mountains-parallax-background_vnitti/Layers/clouds_bg.png"
-dest_files=["res://.godot/imported/clouds_bg.png-bf0453be1f92c55d7f93c500b794569f.ctex"]
+source_file="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/clouds_bg.png"
+dest_files=["res://.godot/imported/clouds_bg.png-c81a8ea0284d38d2cd2c69daf5709b88.ctex"]
 
 [params]
 
