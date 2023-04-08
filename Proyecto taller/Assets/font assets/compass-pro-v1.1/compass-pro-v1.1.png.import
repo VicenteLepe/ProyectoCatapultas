@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bamx58gfls2x7"
-path="res://.godot/imported/tower-swap-gold.png-8bb04daa71113cf79b3edd11fcfbb19b.ctex"
+uid="uid://ci56fmcnpqyab"
+path="res://.godot/imported/compass-pro-v1.1.png-34025613f8e13dd2e4f10bf5de14543c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/font assets/tower-swap-gold.png"
-dest_files=["res://.godot/imported/tower-swap-gold.png-8bb04daa71113cf79b3edd11fcfbb19b.ctex"]
+source_file="res://Assets/font assets/compass-pro-v1.1/compass-pro-v1.1.png"
+dest_files=["res://.godot/imported/compass-pro-v1.1.png-34025613f8e13dd2e4f10bf5de14543c.ctex"]
 
 [params]
 
