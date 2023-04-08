@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3gqfdx1sqh4e"
-path="res://.godot/imported/eLesson_2020-0713_2014-0127-1024x930.png-fe9bdeab965d96fb4fd51481a6982f88.ctex"
+uid="uid://b613pgrbxkxxu"
+path="res://.godot/imported/clouds_mg_3.png-f1cd5d4e5bbdb4712142b8ffa571cf10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://eLesson_2020-0713_2014-0127-1024x930.png"
-dest_files=["res://.godot/imported/eLesson_2020-0713_2014-0127-1024x930.png-fe9bdeab965d96fb4fd51481a6982f88.ctex"]
+source_file="res://Assets/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png"
+dest_files=["res://.godot/imported/clouds_mg_3.png-f1cd5d4e5bbdb4712142b8ffa571cf10.ctex"]
 
 [params]
 
