@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cii6w56etu1mq"]
+[gd_scene load_steps=7 format=3 uid="uid://cii6w56etu1mq"]
 
 [ext_resource type="PackedScene" uid="uid://dusqgtabk1spl" path="res://Escenas/playerScene.tscn" id="3_3qy3l"]
+[ext_resource type="PackedScene" uid="uid://b502mr8fruavg" path="res://Escenas/player2Scene.tscn" id="4_axe7c"]
 [ext_resource type="PackedScene" uid="uid://dx0rs7bmjp5x2" path="res://Escenas/pause_menu.tscn" id="4_pp08s"]
 [ext_resource type="Texture2D" uid="uid://cjeg5cnxiwdvm" path="res://Assets/village props/Texture/TX Tileset Ground.png" id="4_s5gtq"]
 
@@ -111,7 +112,7 @@ terrain_set_0/terrain_0/name = "Terreno0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_qecvm")
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 0
@@ -125,4 +126,7 @@ layer_0/tile_data = PackedInt32Array(327680, 1, 2, 327681, 65537, 2, 327682, 655
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_pp08s")]
 
 [node name="Catapult" parent="." instance=ExtResource("3_3qy3l")]
-position = Vector2(94, 218)
+position = Vector2(90, 200)
+
+[node name="Catapult2" parent="." instance=ExtResource("4_axe7c")]
+position = Vector2(550, 200)

@@ -14,6 +14,7 @@ size = Vector2(85.3333, 12)
 [node name="Wheel" type="RigidBody2D" parent="."]
 z_index = 1
 position = Vector2(-50, 4)
+mass = 10.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel"]
@@ -26,6 +27,7 @@ texture = ExtResource("2_amlt6")
 [node name="Wheel2" type="RigidBody2D" parent="."]
 z_index = 1
 position = Vector2(50, 4)
+mass = 10.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel2"]
@@ -46,6 +48,7 @@ node_a = NodePath("../Base")
 node_b = NodePath("../Wheel2")
 
 [node name="Base" type="RigidBody2D" parent="."]
+mass = 100.0
 script = ExtResource("2_nqjti")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
