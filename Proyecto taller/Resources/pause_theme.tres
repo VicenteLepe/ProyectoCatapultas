@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ber6rgp6joi85"]
+
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="1_usmc1"]
+
+[resource]
+default_font = ExtResource("1_usmc1")
+default_font_size = 24
+Biglevel/base_type = &"Label"
+Biglevel/font_sizes/font_size = 42
+Label/fonts/font = ExtResource("1_usmc1")
+MarginContainer/constants/margin_bottom = 6
+MarginContainer/constants/margin_left = 6
+MarginContainer/constants/margin_right = 6
+MarginContainer/constants/margin_top = 6

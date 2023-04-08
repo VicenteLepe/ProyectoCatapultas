@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c4vdxag60q5f1"]
+
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="1_s5bvh"]
+
+[resource]
+default_font = ExtResource("1_s5bvh")
+default_font_size = 24
+BigLevel/base_type = &"Label"
+BigLevel/font_sizes/font_size = 48
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/fonts/font = ExtResource("1_s5bvh")
+MarginContainer/constants/margin_bottom = 16
+MarginContainer/constants/margin_left = 16
+MarginContainer/constants/margin_right = 16
+MarginContainer/constants/margin_top = 16

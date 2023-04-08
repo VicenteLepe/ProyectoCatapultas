@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7kn5y5f5pma5"]
+[gd_scene load_steps=5 format=3 uid="uid://c7kn5y5f5pma5"]
 
 [ext_resource type="Script" path="res://Escenas/menu_inicial.gd" id="1_3n26k"]
+[ext_resource type="Theme" uid="uid://c4vdxag60q5f1" path="res://Resources/main_menu_theme.tres" id="1_kf6q7"]
 [ext_resource type="PackedScene" uid="uid://cii6w56etu1mq" path="res://Escenas/Main.tscn" id="2_khquk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6ms0"]
+bg_color = Color(0.00392157, 0.560784, 0.184314, 1)
 
 [node name="MenuInicial" type="MarginContainer"]
 anchors_preset = 15
@@ -9,6 +13,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_kf6q7")
 script = ExtResource("1_3n26k")
 main_scene = ExtResource("2_khquk")
 
@@ -16,19 +23,24 @@ main_scene = ExtResource("2_khquk")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6ms0")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_type_variation = &"BigLevel"
 text = "Siege Engineers"
+horizontal_alignment = 1
 
 [node name="BotonStart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
