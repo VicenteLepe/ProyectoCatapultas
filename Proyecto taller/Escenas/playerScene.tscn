@@ -60,3 +60,6 @@ shape = SubResource("RectangleShape2D_ulc1x")
 visibility_layer = 512
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_7fwh6")
+
+[node name="Camera2D" type="Camera2D" parent="Base"]
+position = Vector2(150, -75)
