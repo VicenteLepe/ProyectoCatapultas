@@ -707,9 +707,7 @@ layer_0/tile_data = PackedInt32Array(327680, 65537, 1, 327681, 65537, 1, 327682,
 position = Vector2(90, 200)
 
 [node name="Catapult2" parent="." instance=ExtResource("4_axe7c")]
-position = Vector2(550, 200)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(800, 200)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -723,6 +721,7 @@ motion_mirroring = Vector2(768, 432)
 scale = Vector2(2, 2)
 texture = ExtResource("5_of27v")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
 motion_scale = Vector2(0.2, 0)
@@ -733,6 +732,7 @@ position = Vector2(0, -75)
 scale = Vector2(2, 2)
 texture = ExtResource("6_2sqbb")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
 motion_scale = Vector2(0.1, 0)
@@ -743,6 +743,7 @@ position = Vector2(0, -70)
 scale = Vector2(2, 2)
 texture = ExtResource("7_62bx6")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
 motion_scale = Vector2(0.2, 0)
@@ -753,6 +754,7 @@ position = Vector2(0, -150)
 scale = Vector2(2, 2)
 texture = ExtResource("8_fulek")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
 motion_scale = Vector2(0.4, 0)
@@ -762,6 +764,7 @@ motion_mirroring = Vector2(672, 0)
 scale = Vector2(1.75, 1.75)
 texture = ExtResource("9_jnx4u")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="CanvasLayer2/ParallaxBackground"]
 motion_scale = Vector2(0.6, 0)
@@ -770,3 +773,4 @@ motion_mirroring = Vector2(960, 0)
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/ParallaxBackground/ParallaxLayer6"]
 texture = ExtResource("10_jmmxr")
 centered = false
+metadata/_edit_lock_ = true
