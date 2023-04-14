@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://5qacgtd5a8hj"]
+[gd_scene load_steps=6 format=3 uid="uid://5qacgtd5a8hj"]
 
-[ext_resource type="Script" path="res://Escenas/Building_Scene.gd" id="1_e8bcm"]
 [ext_resource type="Texture2D" uid="uid://dfmm0f2tubqfs" path="res://Assets/village props/Texture/props cortados/TX Wheel.png" id="1_t1mb7"]
 [ext_resource type="Script" path="res://Escenas/Base.gd" id="2_28un0"]
 [ext_resource type="Texture2D" uid="uid://c08tvht7tlshn" path="res://Assets/village props/Texture/props cortados/TX Base.png" id="3_dnotn"]
@@ -11,7 +10,6 @@
 size = Vector2(85.3333, 12)
 
 [node name="Catapult" type="Node2D"]
-script = ExtResource("1_e8bcm")
 
 [node name="Wheel" type="RigidBody2D" parent="."]
 z_index = 1
@@ -64,4 +62,3 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_dnotn")
 
 [node name="Camera2D" type="Camera2D" parent="Base"]
-position = Vector2(150, -75)
