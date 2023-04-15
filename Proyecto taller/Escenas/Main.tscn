@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cii6w56etu1mq"]
+[gd_scene load_steps=15 format=3 uid="uid://cii6w56etu1mq"]
 
 [ext_resource type="Texture2D" uid="uid://damhjfjsf71wt" path="res://Assets/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0_editada.png" id="1_ecqwq"]
 [ext_resource type="PackedScene" uid="uid://b502mr8fruavg" path="res://Escenas/player2Scene.tscn" id="4_axe7c"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://d05s0fe3xes54" path="res://Assets/backgrounds/Taiga-Asset-Pack_v2_vnitti/PNG/Middleground.png" id="9_jnx4u"]
 [ext_resource type="Texture2D" uid="uid://c1rjpsn4qbfpm" path="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" id="10_jmmxr"]
 [ext_resource type="PackedScene" uid="uid://5qacgtd5a8hj" path="res://Escenas/ConstruccionTest.tscn" id="11_w8ngd"]
-[ext_resource type="Script" path="res://Escenas/Building_Scene.gd" id="12_oaa0f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3glge"]
 texture = ExtResource("1_ecqwq")
@@ -775,4 +774,3 @@ metadata/_edit_lock_ = true
 
 [node name="Catapult" parent="." instance=ExtResource("11_w8ngd")]
 position = Vector2(115, 208)
-script = ExtResource("12_oaa0f")

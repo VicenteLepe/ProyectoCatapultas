@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://5qacgtd5a8hj"]
+[gd_scene load_steps=8 format=3 uid="uid://5qacgtd5a8hj"]
 
 [ext_resource type="Texture2D" uid="uid://dfmm0f2tubqfs" path="res://Assets/village props/Texture/props cortados/TX Wheel.png" id="1_t1mb7"]
 [ext_resource type="Script" path="res://Escenas/Base.gd" id="2_28un0"]
 [ext_resource type="Texture2D" uid="uid://c08tvht7tlshn" path="res://Assets/village props/Texture/props cortados/TX Base.png" id="3_dnotn"]
+[ext_resource type="Texture2D" uid="uid://cjm4rv3msw6je" path="res://Assets/village props/Texture/props cortados/TX Tablon.png" id="4_1161e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tud71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulc1x"]
 size = Vector2(85.3333, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1t8"]
+size = Vector2(38, 8)
 
 [node name="Catapult" type="Node2D"]
 
@@ -62,3 +66,45 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_dnotn")
 
 [node name="Camera2D" type="Camera2D" parent="Base"]
+position = Vector2(150, -75)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(21, -28)
+rotation = 0.785398
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_sx1t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_1161e")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(-22, -29)
+rotation = -0.785398
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_sx1t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_1161e")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(-1, -50)
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../RigidBody2D2")
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="."]
+position = Vector2(-47, -4)
+node_a = NodePath("../RigidBody2D2")
+node_b = NodePath("../Base")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(44, -4)
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../Base")
