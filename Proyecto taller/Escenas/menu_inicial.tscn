@@ -47,6 +47,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Start Game"
 
+[node name="Credits" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
 [node name="BotonExit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
