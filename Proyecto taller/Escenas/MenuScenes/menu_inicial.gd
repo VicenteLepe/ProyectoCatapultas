@@ -10,9 +10,9 @@ func _ready():
 	boton_exit.pressed.connect(_on_exit_pressed)
 	boton_credits.pressed.connect(_on_credits_pressed)
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Escenas/PlayerBuilding.tscn")
+	get_tree().change_scene_to_file("res://Escenas/BuildingScenes/PlayerBuilding.tscn")
 	
 func _on_exit_pressed():
 	get_tree().quit()
 func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://Escenas/credits.tscn")
+	get_tree().change_scene_to_file("res://Escenas/MenuScenes/credits.tscn")

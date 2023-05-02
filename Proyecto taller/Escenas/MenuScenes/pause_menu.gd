@@ -22,7 +22,7 @@ func _on_resume_pressed():
 	get_tree().paused = false
 	
 func _on_main_pressed():
-	get_tree().change_scene_to_file("res://Escenas/menu_inicial.tscn")
+	get_tree().change_scene_to_file("res://Escenas/MenuScenes/menu_inicial.tscn")
 	get_tree().paused = false
 	
 func _on_exit_pressed():

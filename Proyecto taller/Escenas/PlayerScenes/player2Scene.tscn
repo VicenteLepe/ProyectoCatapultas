@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b502mr8fruavg"]
 
 [ext_resource type="Texture2D" uid="uid://dfmm0f2tubqfs" path="res://Assets/village props/Texture/props cortados/TX Wheel.png" id="1_w45ta"]
-[ext_resource type="Script" path="res://Escenas/Base2.gd" id="2_f0ls5"]
+[ext_resource type="Script" path="res://Escenas/PlayerScenes/Base2.gd" id="2_f0ls5"]
 [ext_resource type="Texture2D" uid="uid://c08tvht7tlshn" path="res://Assets/village props/Texture/props cortados/TX Base.png" id="3_gbcsy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tud71"]
