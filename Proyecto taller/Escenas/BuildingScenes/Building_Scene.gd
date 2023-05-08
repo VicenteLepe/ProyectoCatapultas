@@ -89,6 +89,7 @@ func _input(event):
 							pin_joint.node_b = second_plank.get_path()
 							pin_joint.softness = 0
 							pin_joint.position = intersection
+							pin_joint.disable_collision = true
 							add_child(pin_joint)
 
 	if event is InputEventKey and event.keycode == KEY_P and event.pressed:
