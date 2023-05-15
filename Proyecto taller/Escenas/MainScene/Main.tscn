@@ -1,7 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cii6w56etu1mq"]
 
 [ext_resource type="Texture2D" uid="uid://damhjfjsf71wt" path="res://Assets/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0_editada.png" id="1_ecqwq"]
-[ext_resource type="PackedScene" uid="uid://b502mr8fruavg" path="res://Escenas/PlayerScenes/player2Scene.tscn" id="4_axe7c"]
 [ext_resource type="PackedScene" uid="uid://dx0rs7bmjp5x2" path="res://Escenas/MenuScenes/pause_menu.tscn" id="4_pp08s"]
 [ext_resource type="Texture2D" uid="uid://cjeg5cnxiwdvm" path="res://Assets/village props/Texture/TX Tileset Ground.png" id="4_s5gtq"]
 [ext_resource type="Texture2D" uid="uid://8w6jfv0mk0uo" path="res://Assets/backgrounds/Taiga-Asset-Pack_v2_vnitti/PNG/Extension_blue.png" id="5_of27v"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b36gw0ci4ie7f" path="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="8_fulek"]
 [ext_resource type="Texture2D" uid="uid://d05s0fe3xes54" path="res://Assets/backgrounds/Taiga-Asset-Pack_v2_vnitti/PNG/Middleground.png" id="9_jnx4u"]
 [ext_resource type="Texture2D" uid="uid://c1rjpsn4qbfpm" path="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" id="10_jmmxr"]
+[ext_resource type="Script" path="res://Escenas/MainScene/Camera2D.gd" id="11_bjspy"]
 [ext_resource type="PackedScene" uid="uid://dusqgtabk1spl" path="res://Escenas/PlayerScenes/playerScene.tscn" id="11_k3veo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3glge"]
@@ -703,9 +703,6 @@ layer_0/tile_data = PackedInt32Array(327680, 65537, 1, 327681, 65537, 1, 327682,
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_pp08s")]
 
-[node name="Catapult2" parent="." instance=ExtResource("4_axe7c")]
-position = Vector2(800, 200)
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer2"]
@@ -774,3 +771,13 @@ metadata/_edit_lock_ = true
 
 [node name="Catapult3" parent="." instance=ExtResource("11_k3veo")]
 position = Vector2(116, 208)
+player = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(116, 208)
+zoom = Vector2(0.5, 0.5)
+process_callback = 0
+script = ExtResource("11_bjspy")
+
+[node name="Catapult" parent="." instance=ExtResource("11_k3veo")]
+position = Vector2(559, 200)

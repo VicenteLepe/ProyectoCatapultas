@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dsywomyv2wuwp"]
+
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="1_padun"]
+
+[resource]
+default_font_size = 16
+Button/constants/h_separation = 2
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_padun")

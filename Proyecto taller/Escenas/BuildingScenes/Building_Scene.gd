@@ -103,3 +103,9 @@ func _input(event):
 
 func _on_continuar_pressed():
 	get_tree().change_scene_to_file("res://Escenas/MainScene/Main.tscn")
+
+
+func _on_to_main_menu_pressed():
+	get_tree().change_scene_to_file("res://Escenas/MenuScenes/menu_inicial.tscn")
+	
+	
