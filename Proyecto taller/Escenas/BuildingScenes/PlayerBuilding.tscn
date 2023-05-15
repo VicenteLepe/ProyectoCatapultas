@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://p0rth33fp1rp"]
+[gd_scene load_steps=10 format=3 uid="uid://p0rth33fp1rp"]
 
 [ext_resource type="Texture2D" uid="uid://damhjfjsf71wt" path="res://Assets/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0_editada.png" id="1_5a0b0"]
 [ext_resource type="Texture2D" uid="uid://cjeg5cnxiwdvm" path="res://Assets/village props/Texture/TX Tileset Ground.png" id="2_8qpy7"]
 [ext_resource type="PackedScene" uid="uid://dusqgtabk1spl" path="res://Escenas/PlayerScenes/playerScene.tscn" id="3_q873a"]
 [ext_resource type="PackedScene" uid="uid://kfp1qdpiwmrf" path="res://Escenas/BuildingScenes/Building_Scene.tscn" id="4_woudb"]
+[ext_resource type="FontFile" uid="uid://jwpyp2vwtpxc" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.otf" id="5_qitxn"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/Button.gd" id="6_s1daf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3glge"]
 texture = ExtResource("1_5a0b0")
@@ -697,3 +699,17 @@ position = Vector2(174, 175)
 
 [node name="Node2D" parent="." instance=ExtResource("4_woudb")]
 position = Vector2(-1, -26)
+
+[node name="Continuar" type="Button" parent="."]
+custom_minimum_size = Vector2(10, 0)
+offset_left = 524.0
+offset_top = 253.0
+offset_right = 640.0
+offset_bottom = 281.0
+theme_override_fonts/font = ExtResource("5_qitxn")
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "Continuar"
+script = ExtResource("6_s1daf")
+
+[connection signal="pressed" from="Continuar" to="Node2D" method="_on_continuar_pressed"]

@@ -99,3 +99,7 @@ func _input(event):
 				plank_node.freeze = true
 			else:
 				plank_node.freeze = false
+
+
+func _on_continuar_pressed():
+	get_tree().change_scene_to_file("res://Escenas/MainScene/Main.tscn")
