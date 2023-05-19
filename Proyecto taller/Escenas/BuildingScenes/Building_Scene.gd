@@ -99,7 +99,8 @@ func _input(event):
 				plank_node.freeze = true
 			else:
 				plank_node.freeze = false
-
+	if event is InputEventKey and event.keycode == KEY_R and event.pressed:
+		get_tree().reload_current_scene()
 
 func _on_continuar_pressed():
 	get_tree().change_scene_to_file("res://Escenas/MainScene/Main.tscn")
@@ -107,5 +108,5 @@ func _on_continuar_pressed():
 
 func _on_to_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Escenas/MenuScenes/menu_inicial.tscn")
-	
+
 	
