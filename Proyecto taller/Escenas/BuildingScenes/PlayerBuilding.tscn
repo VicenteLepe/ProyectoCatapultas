@@ -698,7 +698,7 @@ layer_0/tile_data = PackedInt32Array(327680, 65537, 1, 327681, 65537, 1, 327682,
 [node name="Catapult" parent="." instance=ExtResource("3_q873a")]
 position = Vector2(168, 235)
 
-[node name="Node2D" parent="." instance=ExtResource("4_woudb")]
+[node name="Building" parent="." instance=ExtResource("4_woudb")]
 position = Vector2(-1, -26)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -725,5 +725,5 @@ action_mode = 0
 text = "Continue"
 script = ExtResource("6_s1daf")
 
-[connection signal="pressed" from="Camera2D/to Main Menu" to="Node2D" method="_on_to_main_menu_pressed"]
-[connection signal="pressed" from="Camera2D/Continue_button" to="Node2D" method="_on_continuar_pressed"]
+[connection signal="pressed" from="Camera2D/to Main Menu" to="Building" method="_on_to_main_menu_pressed"]
+[connection signal="pressed" from="Camera2D/Continue_button" to="Building" method="_on_continuar_pressed"]

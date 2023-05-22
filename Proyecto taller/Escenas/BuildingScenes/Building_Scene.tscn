@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/Building_Scene.gd" id="1_fm201"]
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/Grid.gd" id="2_twjfp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Building" type="Node2D"]
 script = ExtResource("1_fm201")
 
 [node name="Grid" type="Node2D" parent="."]
