@@ -55,6 +55,12 @@ move_left_B={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="world "
+2d_physics/layer_2="planks"
+2d_physics/layer_3="wheels"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
