@@ -15,50 +15,55 @@ script = ExtResource("1_w2u7j")
 
 [node name="Wheel" type="RigidBody2D" parent="."]
 z_index = 1
-position = Vector2(-50, 4)
+position = Vector2(-84, 6)
 mass = 10.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel"]
-scale = Vector2(1.6, 1.6)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_tud71")
 
 [node name="Sprite2D" type="Sprite2D" parent="Wheel"]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_amlt6")
 
 [node name="Wheel2" type="RigidBody2D" parent="."]
 z_index = 1
-position = Vector2(50, 4)
+position = Vector2(84, 6)
 mass = 10.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel2"]
-scale = Vector2(1.6, 1.6)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_tud71")
 
 [node name="Sprite2D" type="Sprite2D" parent="Wheel2"]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_amlt6")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(-50, 4)
+position = Vector2(-84, 6)
 node_a = NodePath("../Base")
 node_b = NodePath("../Wheel")
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
-position = Vector2(50, 4)
+position = Vector2(84, 6)
 node_a = NodePath("../Base")
 node_b = NodePath("../Wheel2")
 
 [node name="Base" type="RigidBody2D" parent="."]
 mass = 100.0
 script = ExtResource("2_nqjti")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 position = Vector2(0, -3)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.5, 2)
 shape = SubResource("RectangleShape2D_ulc1x")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Base"]
 visibility_layer = 512
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.5, 2)
 texture = ExtResource("3_7fwh6")
+metadata/_edit_lock_ = true

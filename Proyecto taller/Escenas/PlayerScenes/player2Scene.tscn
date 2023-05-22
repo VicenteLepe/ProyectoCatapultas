@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b502mr8fruavg"]
+[gd_scene load_steps=6 format=3 uid="uid://b65s5gxe8gdnd"]
 
 [ext_resource type="Texture2D" uid="uid://dfmm0f2tubqfs" path="res://Assets/village props/Texture/props cortados/TX Wheel.png" id="1_w45ta"]
 [ext_resource type="Script" path="res://Escenas/PlayerScenes/Base2.gd" id="2_f0ls5"]
