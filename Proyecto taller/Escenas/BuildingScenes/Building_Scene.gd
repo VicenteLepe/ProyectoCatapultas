@@ -3,12 +3,17 @@ extends Node2D
 var building_plank_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")
 var start_pos = null
 var grid_size = 32
+@onready var animation_player = $"../AnimationPlayer"
+@onready var label = $"../AnimationPlayer/Label"
 
 var plank_list = []
 var intersection_dict = {}
 var plank_id = 0
 var intersection_id = 0
-
+func _ready():
+	animation_player.play("animation_label")
+func hide_label():
+	label.hide()
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
