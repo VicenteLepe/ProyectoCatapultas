@@ -1,8 +1,31 @@
 [gd_scene load_steps=2 format=3 uid="uid://bes3q464piqqu"]
 
-[ext_resource type="PackedScene" uid="uid://b502mr8fruavg" path="res://Escenas/PlayerScenes/player2Scene.tscn" id="1_cgwkd"]
+[ext_resource type="Script" path="res://Escenas/MenuScenes/credits.gd" id="1_i8jec"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_i8jec")
 
-[node name="Catapult2" parent="." instance=ExtResource("1_cgwkd")]
-position = Vector2(220, 107)
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 6.0
+offset_right = 615.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "credits
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 401.0
+offset_top = 289.0
+offset_right = 629.0
+offset_bottom = 331.0
+text = "return to menu
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
