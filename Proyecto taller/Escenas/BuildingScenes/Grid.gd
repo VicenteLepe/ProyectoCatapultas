@@ -13,3 +13,11 @@ func _draw():
 	while y < h:
 		draw_line(Vector2(0, y), Vector2(w, y), Color(0.5, 0.5, 0.5))
 		y += grid_size
+
+func _input(event):
+	if event is InputEventKey and event.keycode == KEY_H and event.pressed:
+		if self.is_visible():
+			self.hide()
+		else:
+			self.show()
+		

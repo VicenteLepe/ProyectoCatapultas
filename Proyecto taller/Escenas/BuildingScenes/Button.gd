@@ -6,4 +6,3 @@ extends Button
 func _ready():
 		if continuar.ACTION_MODE_BUTTON_PRESS = true:
 			get_tree().change_scene_to_file("res://Escenas/MainScene/Main.tscn")
-
