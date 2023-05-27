@@ -5,6 +5,7 @@ var start_pos = null
 var grid_size = 32
 @onready var animation_player = $"../AnimationPlayer"
 @onready var label = $"../AnimationPlayer/Label"
+@onready var select_element_button = $"../Camera2D/UI/Select_element_button"
 
 var plank_list = []
 var intersection_dict = {}
@@ -13,8 +14,9 @@ var intersection_id = 0
 
 func _ready():
 	animation_player.play("animation_label")
+	#on_item_selected(select_element_button.get_selected_id())
 
-var building_state = true
+var building_state = false
 
 func hide_label():
 	label.hide()
@@ -127,6 +129,8 @@ func _on_continuar_pressed():
 func _on_to_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Escenas/MenuScenes/menu_inicial.tscn")
 
-
+#func on_item_selected(id):
+#	print(str(select_element_button.get_item_text(id)))
 func _on_select_element_button_item_selected(index):
-	pass # Replace with function body.
+	if select_element_button.get_selected_id() == 1:
+		building_state = true

@@ -2466,7 +2466,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("8_dqxm8")
 theme_override_font_sizes/font_size = 32
-text = "You can press the p key once to unlock the scene, once more to lock it, and r key to reset the scene"
+text = "You can press the p key once to unlock the building, once more to lock it, and r key to reset the scene"
 
 [connection signal="pressed" from="Camera2D/UI/to Main Menu" to="Building" method="_on_to_main_menu_pressed"]
 [connection signal="pressed" from="Camera2D/UI/Continue_button" to="Building" method="_on_continuar_pressed"]
+[connection signal="item_selected" from="Camera2D/UI/Select_element_button" to="Building" method="_on_select_element_button_item_selected"]
