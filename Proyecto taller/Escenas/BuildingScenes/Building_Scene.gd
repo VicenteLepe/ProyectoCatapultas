@@ -3,8 +3,6 @@ extends Node2D
 var building_plank_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")
 var start_pos = null
 var grid_size = 32
-@onready var animation_player = $"../AnimationPlayer"
-@onready var label = $"../AnimationPlayer/Label"
 @onready var select_element_button = $"../Camera2D/UI/Select_element_button"
 
 var plank_list = []
@@ -12,14 +10,8 @@ var intersection_dict = {}
 var plank_id = 0
 var intersection_id = 0
 
-func _ready():
-	animation_player.play("animation_label")
-	#on_item_selected(select_element_button.get_selected_id())
-
 var building_state = false
 
-func hide_label():
-	label.hide()
 func _unhandled_input(event):
 	if building_state:
 		if event is InputEventMouseButton and event.pressed:
@@ -116,21 +108,9 @@ func _unhandled_input(event):
 					plank_node.freeze = true
 				else:
 					plank_node.freeze = false
-		if event is InputEventKey and event.keycode == KEY_R and event.pressed:
-			get_tree().reload_current_scene()
 
-
-
-
-func _on_continuar_pressed():
-	get_tree().change_scene_to_file("res://Escenas/MainScene/Main.tscn")
-
-
-func _on_to_main_menu_pressed():
-	get_tree().change_scene_to_file("res://Escenas/MenuScenes/menu_inicial.tscn")
-
-#func on_item_selected(id):
-#	print(str(select_element_button.get_item_text(id)))
 func _on_select_element_button_item_selected(index):
 	if select_element_button.get_selected_id() == 1:
 		building_state = true
+	else:
+		building_state = false

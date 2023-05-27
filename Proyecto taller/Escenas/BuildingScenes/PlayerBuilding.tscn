@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://p0rth33fp1rp"]
+[gd_scene load_steps=18 format=3 uid="uid://p0rth33fp1rp"]
 
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding.gd" id="1_flj1r"]
 [ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="3_m0i3s"]
 [ext_resource type="PackedScene" uid="uid://dusqgtabk1spl" path="res://Escenas/PlayerScenes/playerScene.tscn" id="3_q873a"]
 [ext_resource type="Texture2D" uid="uid://cux5o1gk1uduc" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="4_8muyl"]
@@ -2349,7 +2350,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Building")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -2367,6 +2368,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_flj1r")
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -2458,9 +2460,9 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-offset_left = 11.0
+offset_left = 700.0
 offset_top = 2.0
-offset_right = 1279.0
+offset_right = 2002.0
 offset_bottom = 35.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -2468,6 +2470,6 @@ theme_override_fonts/font = ExtResource("8_dqxm8")
 theme_override_font_sizes/font_size = 32
 text = "You can press the p key once to unlock the building, once more to lock it, and r key to reset the scene"
 
-[connection signal="pressed" from="Camera2D/UI/to Main Menu" to="Building" method="_on_to_main_menu_pressed"]
-[connection signal="pressed" from="Camera2D/UI/Continue_button" to="Building" method="_on_continuar_pressed"]
+[connection signal="pressed" from="Camera2D/UI/to Main Menu" to="." method="_on_to_main_menu_pressed"]
+[connection signal="pressed" from="Camera2D/UI/Continue_button" to="." method="_on_continue_button_pressed"]
 [connection signal="item_selected" from="Camera2D/UI/Select_element_button" to="Building" method="_on_select_element_button_item_selected"]
