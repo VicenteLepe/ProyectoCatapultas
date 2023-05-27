@@ -109,7 +109,7 @@ func _unhandled_input(event):
 				else:
 					plank_node.freeze = false
 
-func _on_select_element_button_item_selected(index):
+func _on_select_element_button_item_selected(_index):
 	if select_element_button.get_selected_id() == 1:
 		building_state = true
 	else:
