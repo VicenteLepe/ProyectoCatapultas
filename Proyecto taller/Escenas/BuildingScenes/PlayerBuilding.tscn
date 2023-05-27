@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://p0rth33fp1rp"]
+[gd_scene load_steps=17 format=3 uid="uid://p0rth33fp1rp"]
 
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding.gd" id="1_flj1r"]
 [ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="3_m0i3s"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://kfp1qdpiwmrf" path="res://Escenas/BuildingScenes/Building_Scene.tscn" id="4_woudb"]
 [ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="5_jb36m"]
 [ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="5_ldglv"]
-[ext_resource type="Script" path="res://Escenas/BuildingScenes/Button.gd" id="6_s1daf"]
 [ext_resource type="FontFile" uid="uid://jwpyp2vwtpxc" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.otf" id="8_dqxm8"]
 [ext_resource type="Theme" uid="uid://c4vdxag60q5f1" path="res://Resources/main_menu_theme.tres" id="8_nkjwi"]
 
@@ -2419,7 +2418,6 @@ theme_override_fonts/font = ExtResource("5_ldglv")
 theme_override_font_sizes/font_size = 25
 action_mode = 0
 text = "Continue"
-script = ExtResource("6_s1daf")
 
 [node name="Delete_button" type="Button" parent="Camera2D/UI"]
 layout_mode = 0
