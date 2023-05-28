@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdca12exi0hsc"]
+
+[ext_resource type="Texture2D" uid="uid://dhd0mm5meic33" path="res://Assets/village props/Texture/props cortados/TX rope segment.png" id="1_vxgwh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8f2ut"]
+radius = 1.0
+height = 8.0
+
+[node name="building_cable" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_vxgwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CapsuleShape2D_8f2ut")

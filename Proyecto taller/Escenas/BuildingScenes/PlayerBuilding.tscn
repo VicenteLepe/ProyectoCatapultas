@@ -2390,6 +2390,8 @@ position = Vector2(168, 235)
 [node name="Building" parent="." instance=ExtResource("4_woudb")]
 position = Vector2(-1, -26)
 
+[node name="Delete" type="Node2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(323, 141)
 
