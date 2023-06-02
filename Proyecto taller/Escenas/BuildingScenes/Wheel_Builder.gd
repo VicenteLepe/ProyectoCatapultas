@@ -42,14 +42,20 @@ func _unhandled_input(event):
 						var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
 					# Assuming the wheel's CollisionShape2D node has a CircleShape2D assigned to it
 						if collision_shape and collision_shape.shape:
-							collision_shape.shape.radius = wheel_radius
+							collision_shape.shape.radius = wheel_radius/2.5
 							print(collision_shape.shape.radius)
+							var scale_factor = wheel_radius/16
+
+							var sprite = rigidbody.get_child(1) # assuming sprite is the second child
+							if sprite:
+								sprite.scale.x = scale_factor
+								sprite.scale.y = scale_factor
 
 					add_child(building_wheel)
 					wheel_list.append([wheel_id, [start_pos, wheel_radius], building_wheel.get_child(0)])
 					wheel_id += 1
 					start_pos = null
-					# Add wheel to intersection dict if needed
+					# Add wheel to intersection dict if 
 					if start_pos not in Building_node.building_intersection_dict:
 						Building_node.add_position_to_intersection_dict(start_pos)
 					# Add new wheel to intersection list
