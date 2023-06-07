@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://kfp1qdpiwmrf"]
+[gd_scene load_steps=7 format=3 uid="uid://kfp1qdpiwmrf"]
 
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/Building_Scene.gd" id="1_fm201"]
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/Grid.gd" id="2_twjfp"]
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/PlankBuilder.gd" id="3_vto5j"]
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/Wheel_Builder.gd" id="4_8guty"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/Builder.gd" id="5_c6ovy"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/Constructor.gd" id="6_dgn6k"]
 
 [node name="Building" type="Node2D"]
 script = ExtResource("1_fm201")
@@ -11,8 +13,14 @@ script = ExtResource("1_fm201")
 [node name="Grid" type="Node2D" parent="."]
 script = ExtResource("2_twjfp")
 
+[node name="Builder" type="Node2D" parent="."]
+script = ExtResource("5_c6ovy")
+
 [node name="Plank_Builder" type="Node2D" parent="."]
 script = ExtResource("3_vto5j")
 
 [node name="Wheel_Builder" type="Node2D" parent="."]
 script = ExtResource("4_8guty")
+
+[node name="Constructor" type="Node2D" parent="."]
+script = ExtResource("6_dgn6k")
