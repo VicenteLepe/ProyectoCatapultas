@@ -2,16 +2,16 @@ extends Builder
 
 class_name Plank_builder
 
-func define_object_shape(end_pos, start_pos, building_object, rigidbody, collision_shape, sprite):
+func define_object_shape(_end_pos, _start_pos, _building_object, _rigidbody, _collision_shape, _sprite):
 	# define the position of the plank
-	building_object.position = (start_pos + end_pos) / 2
-	building_object.rotation = (end_pos - start_pos).angle()
+	_building_object.position = (_start_pos + _end_pos) / 2
+	_building_object.rotation = (_end_pos - _start_pos).angle()
 	# calculate the scale factor
-	var length = (end_pos - start_pos).length()
-	var collision_shape_length = collision_shape.shape.extents.x * 2
+	var length = (_end_pos - _start_pos).length()
+	var collision_shape_length = _collision_shape.shape.extents.x * 2
 	var scale_factor = length / collision_shape_length
 	# scale the length of the plank
-	collision_shape.scale.x = scale_factor
-	sprite.scale.x = scale_factor
+	_collision_shape.scale.x = scale_factor
+	_sprite.scale.x = scale_factor
 
 
