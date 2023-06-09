@@ -2,16 +2,25 @@ extends Builder
 
 var building_object_scene
 var object_type
-var plank_builder = Plank_builder.new()
-var wheel_builder = Wheel_builder.new()
+@onready var base_builder = $Base_Builder
+@onready var plank_builder = $Plank_Builder
+@onready var wheel_builder = $Wheel_Builder
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get a reference to the parent node script
 	Building_node = get_parent()
+	base_builder.Building_node = Building_node
+	plank_builder.Building_node = Building_node
+	wheel_builder.Building_node = Building_node
 
 
 func _unhandled_input(event):
+	if Building_node.base_building_state:
+		building_state = Building_node.base_building_state
+		building_object_scene = preload("res://Escenas/BuildingScenes/building_base.tscn")
+		object_type = "Base "
+		
 	if Building_node.plank_building_state:
 		building_state = Building_node.plank_building_state
 		building_object_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")
@@ -26,11 +35,12 @@ func _unhandled_input(event):
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				var click_pos = get_local_mouse_position()
+				if object_type == "Base ":
+					base_builder.build_object(building_object_scene, object_type, click_pos)
 				if object_type == "Plank ":
 					plank_builder.build_object(building_object_scene, object_type, click_pos)
 				if object_type == "Wheel ":
-					plank_builder.build_object(building_object_scene, object_type, click_pos)
-				
+					wheel_builder.build_object(building_object_scene, object_type, click_pos)
 
 		if event is InputEventKey and event.keycode == KEY_P and event.pressed:
 			for object in list:

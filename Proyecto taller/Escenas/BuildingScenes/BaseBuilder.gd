@@ -1,6 +1,6 @@
 extends Builder
 
-class_name Plank_builder
+class_name Base_builder
 
 func define_object_shape(_end_pos, _start_pos, _building_object, _rigidbody, _collision_shape, _sprite):
 	# define the position of the plank

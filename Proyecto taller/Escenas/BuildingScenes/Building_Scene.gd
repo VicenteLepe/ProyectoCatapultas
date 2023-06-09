@@ -26,6 +26,7 @@ func _on_select_element_button_item_selected(_index):
 	wheel_building_state = false
 	cable_building_state = false
 	bucket_building_state = false
+	base_building_state = false
 
 	if select_element_button.get_selected_id() == 1:
 		plank_building_state = true
@@ -35,6 +36,8 @@ func _on_select_element_button_item_selected(_index):
 		cable_building_state = true
 	elif select_element_button.get_selected_id() == 4:
 		bucket_building_state = true
+	elif select_element_button.get_selected_id() == 5:
+		base_building_state = true
 
 func add_to_intersection_dict(element, position):
 	if element not in building_intersection_dict[position]:
