@@ -2367,6 +2367,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_flj1r")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2456,6 +2457,7 @@ popup/item_5/text = "Bucket"
 popup/item_5/id = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
 method_call_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_nyhhu")

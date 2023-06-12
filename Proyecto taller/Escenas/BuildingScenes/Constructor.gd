@@ -42,13 +42,8 @@ func _unhandled_input(event):
 				if object_type == "Wheel ":
 					wheel_builder.build_object(building_object_scene, object_type, click_pos)
 
-		if event is InputEventKey and event.keycode == KEY_P and event.pressed:
-			for object in list:
-				var object_node = object[2]
-				if object_node.freeze == false:
-					object_node.freeze = true
-				else:
-					object_node.freeze = false
+	if event is InputEventKey and event.keycode == KEY_P and event.pressed:
+		get_tree().paused = not get_tree().paused
 
 
 # Function to get the object list

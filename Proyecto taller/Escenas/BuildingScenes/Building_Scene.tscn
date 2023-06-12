@@ -14,6 +14,7 @@ script = ExtResource("1_fm201")
 script = ExtResource("2_twjfp")
 
 [node name="Constructor" type="Node2D" parent="."]
+process_mode = 3
 script = ExtResource("6_dgn6k")
 
 [node name="Wheel_Builder" type="Node2D" parent="Constructor"]

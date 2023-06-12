@@ -12,7 +12,6 @@ size = Vector2(40, 10)
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 2
 collision_mask = 3
-freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_ron0e")

@@ -49,4 +49,6 @@ func add_position_to_intersection_dict(position):
 func _ready():
 	var list = Builder.get_object_list()
 	building_element_dict["all"] = list
+	
+
 
