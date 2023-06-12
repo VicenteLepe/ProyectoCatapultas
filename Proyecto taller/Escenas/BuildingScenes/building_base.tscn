@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpijs"]
 resource_local_to_scene = true
-size = Vector2(84, 14)
+size = Vector2(170, 30)
 
 [node name="building_base" type="Node2D"]
 
@@ -15,4 +15,6 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_jpijs")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, 4)
+scale = Vector2(2, 2.5)
 texture = ExtResource("1_0fgm5")

@@ -23,7 +23,7 @@ func _unhandled_input(event):
 		
 	if Building_node.plank_building_state:
 		building_state = Building_node.plank_building_state
-		building_object_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")
+		building_object_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")	
 		object_type = "Plank "
 
 	if Building_node.wheel_building_state:
