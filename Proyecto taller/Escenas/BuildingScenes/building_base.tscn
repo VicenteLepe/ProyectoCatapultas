@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpijs"]
 resource_local_to_scene = true
-size = Vector2(192, 32)
+size = Vector2(190, 23)
 
 [node name="building_base" type="Node2D"]
 
@@ -13,10 +13,10 @@ collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0, -1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_jpijs")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 position = Vector2(0, 4.5)
-scale = Vector2(2.26, 2.66)
+scale = Vector2(2.26, 2)
 texture = ExtResource("1_0fgm5")
