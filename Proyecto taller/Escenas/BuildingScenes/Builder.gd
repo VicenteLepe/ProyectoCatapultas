@@ -64,40 +64,40 @@ func build_object(building_object_scene, object_type, click_pos):
 		for object in list:
 			print(object_type,object[0]," at: ",object[1])
 
-		for intersection in Building_node.building_intersection_dict.keys():
-			var intersection_elements = Building_node.building_intersection_dict[intersection]
+#		for intersection in Building_node.building_intersection_dict.keys():
+#			var intersection_elements = Building_node.building_intersection_dict[intersection]
 
-			var elements_dict = {}
-			for element in intersection_elements:
-				if element.elementType not in elements_dict:
-					elements_dict[element.elementType] = []
+#			var elements_dict = {}
+#			for element in intersection_elements:
+#				if element.elementType not in elements_dict:
+#					elements_dict[element.elementType] = []
 				# Check if id is not already in list before appending
-				if element.id not in elements_dict[element.elementType]:
-					elements_dict[element.elementType].append(element.id)
+#				if element.id not in elements_dict[element.elementType]:
+#					elements_dict[element.elementType].append(element.id)
 
-			for elementType in elements_dict.keys():
-				print("Intersection at: ", intersection, " between ", elementType, " IDs ", elements_dict[elementType])
+#			for elementType in elements_dict.keys():
+#				print("Intersection at: ", intersection, " between ", elementType, " IDs ", elements_dict[elementType])
 
-		for intersection in Building_node.building_intersection_dict.keys():
-			var intersecting_objects = []
-			for element in Building_node.building_intersection_dict[intersection]:
-				if element.elementType == object_type:  
-					intersecting_objects.append(element.id)
-			var object_count = intersecting_objects.size()
+#		for intersection in Building_node.building_intersection_dict.keys():
+#			var intersecting_objects = []
+#			for element in Building_node.building_intersection_dict[intersection]:
+#				if element.elementType == object_type:  
+#					intersecting_objects.append(element.id)
+#			var object_count = intersecting_objects.size()
 
 			# Iterate over all pairs of intersecting objects
-			for i in range(object_count - 1):
-				for j in range(i + 1, object_count):
-					var first_object = list[intersecting_objects[i]][2]
-					var second_object = list[intersecting_objects[j]][2]
+#			for i in range(object_count - 1):
+#				for j in range(i + 1, object_count):
+#					var first_object = list[intersecting_objects[i]][2]
+#					var second_object = list[intersecting_objects[j]][2]
 
-					var pin_joint = PinJoint2D.new()
-					pin_joint.node_a = first_object.get_path()
-					pin_joint.node_b = second_object.get_path()
-					pin_joint.softness = 0
-					pin_joint.position = intersection
-					pin_joint.disable_collision = true
-					add_child(pin_joint)
+#					var pin_joint = PinJoint2D.new()
+#					pin_joint.node_a = first_object.get_path()
+#					pin_joint.node_b = second_object.get_path()
+#					pin_joint.softness = 0
+#					pin_joint.position = intersection
+#					pin_joint.disable_collision = true
+#					add_child(pin_joint)
 
 
 # Function to get the object list
