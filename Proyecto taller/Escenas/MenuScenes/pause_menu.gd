@@ -7,6 +7,7 @@ extends MarginContainer
 
 
 func _ready():
+	get_tree().paused = false
 	resume.pressed.connect(_on_resume_pressed)
 	main.pressed.connect(_on_main_pressed)
 	exit.pressed.connect(_on_exit_pressed)
