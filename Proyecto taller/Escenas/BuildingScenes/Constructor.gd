@@ -8,6 +8,7 @@ var object_type
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().paused = true
 	# Get a reference to the parent node script
 	Building_node = get_parent()
 	base_builder.Building_node = Building_node
