@@ -13,6 +13,16 @@ func define_element_shape(_end_pos, _start_pos, _building_element, _rigidbody, _
 	pass
 
 func build_element(building_element_scene, element_type, click_pos):
+	# este código hace que la base sea única
+	var x=0
+	if element_type == "Base ":
+		for element in list:
+			print("elemento2:",element[-1])
+			if element[-1] == "Base ":
+				x=1
+				break
+	if x==1:
+		return
 	for element in list:
 		var start = element[1][0]
 		var end = element[1][1]
@@ -34,9 +44,8 @@ func build_element(building_element_scene, element_type, click_pos):
 		var sprite = rigidbody.get_child(1) # assuming sprite is the second child
 		
 		define_element_shape(end_pos, start_pos, building_element, rigidbody, collision_shape, sprite)
-		
 		add_child(building_element)
-		list.append([id, [start_pos, end_pos], building_element.get_child(0)])
+		list.append([id, [start_pos, end_pos], building_element.get_child(0), element_type])
 		id += 1
 		start_pos = null
 
