@@ -13,7 +13,7 @@ func define_element_shape(_end_pos, _start_pos, _building_element, _rigidbody, _
 	pass
 
 func build_element(building_element_scene, element_type, click_pos):
-	# este código hace que la base sea única
+	# this code check if a base exists,and if it does, it does not create another one.
 	var x=0
 	if element_type == "Base ":
 		for element in list:
