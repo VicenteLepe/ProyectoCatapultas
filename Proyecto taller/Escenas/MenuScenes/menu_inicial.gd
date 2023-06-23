@@ -6,6 +6,7 @@ extends MarginContainer
 
 
 func _ready():
+	get_tree().paused = false
 	boton_start.pressed.connect(_on_start_pressed)
 	boton_exit.pressed.connect(_on_exit_pressed)
 	boton_credits.pressed.connect(_on_credits_pressed)
