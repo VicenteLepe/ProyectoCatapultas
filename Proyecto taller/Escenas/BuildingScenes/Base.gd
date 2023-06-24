@@ -12,4 +12,4 @@ func _physics_process(_delta):
 	elif Input.is_action_pressed(move_left):
 		set_linear_velocity(Vector2(-150, get_linear_velocity().y))
 	else:
-		set_linear_velocity(Vector2((get_linear_velocity().x - get_linear_velocity().x * 0.05), get_linear_velocity().y))
+		set_linear_velocity(Vector2((get_linear_velocity().x - get_linear_velocity().x * 0.5), get_linear_velocity().y))
