@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://p0rth33fp1rp"]
+[gd_scene load_steps=16 format=3 uid="uid://p0rth33fp1rp"]
 
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding.gd" id="1_flj1r"]
 [ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="3_m0i3s"]
-[ext_resource type="PackedScene" uid="uid://dusqgtabk1spl" path="res://Escenas/PlayerScenes/playerScene.tscn" id="3_q873a"]
 [ext_resource type="Texture2D" uid="uid://cux5o1gk1uduc" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="4_8muyl"]
 [ext_resource type="PackedScene" uid="uid://kfp1qdpiwmrf" path="res://Escenas/BuildingScenes/Building_Scene.tscn" id="4_woudb"]
 [ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="5_jb36m"]
@@ -2384,9 +2383,6 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_6plce")
 format = 2
 layer_0/tile_data = PackedInt32Array(393232, 1310720, 11, 458768, 1310720, 11, 262160, 1310720, 9, 327696, 1310720, 10, 262159, 1245184, 9, 262158, 1179648, 9, 262157, 1114112, 9, 327693, 1114112, 10, 393229, 1114112, 10, 458766, 1179648, 12, 393230, 1179648, 11, 327694, 1179648, 10, 327695, 1245184, 10, 393231, 1245184, 11, 458767, 1245184, 12, 458765, 1114112, 11, 458764, 196608, 10, 458763, 131072, 10, 458762, 65536, 10, 458769, 917504, 3, 131088, 1310720, 8, 65552, 1310720, 7, 131075, 1310720, 8, 131078, 1310720, 8, 131085, 1310720, 8, 65549, 1310720, 7, 65542, 1310720, 7, 65539, 1310720, 7, 458755, 851968, 5, 458756, 917504, 5)
-
-[node name="Catapult" parent="." instance=ExtResource("3_q873a")]
-position = Vector2(168, 235)
 
 [node name="Building" parent="." instance=ExtResource("4_woudb")]
 position = Vector2(-1, -26)

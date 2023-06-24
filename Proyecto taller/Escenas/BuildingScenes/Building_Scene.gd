@@ -14,6 +14,23 @@ var delete_building_state = false
 var building_element_dict = {}
 var building_intersection_dict = {}
 
+enum PlayerType {
+	A, 
+	B
+}
+
+@export var player: PlayerType
+
+
+func _ready():
+	match player:
+		PlayerType.A:
+#			Game.player_A = base
+			Game.player = "A"
+		PlayerType.B:
+#			Game.player_B = base
+			Game.player = "B"
+
 func _on_delete_button_pressed():
 	plank_building_state = false
 	wheel_building_state = false

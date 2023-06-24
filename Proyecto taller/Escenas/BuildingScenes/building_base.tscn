@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://das3f71mnpms4"]
+[gd_scene load_steps=4 format=3 uid="uid://das3f71mnpms4"]
 
 [ext_resource type="Texture2D" uid="uid://c08tvht7tlshn" path="res://Assets/village props/Texture/props cortados/TX Base.png" id="1_0fgm5"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/Base.gd" id="1_w0aba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpijs"]
 resource_local_to_scene = true
@@ -12,6 +13,7 @@ size = Vector2(190, 23)
 collision_layer = 2
 collision_mask = 3
 input_pickable = true
+script = ExtResource("1_w0aba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0, 0.5)
