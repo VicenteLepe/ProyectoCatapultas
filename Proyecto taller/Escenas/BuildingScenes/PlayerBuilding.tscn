@@ -2460,10 +2460,10 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-offset_left = -1114.42
-offset_top = 1.3104
-offset_right = 1117.58
-offset_bottom = 34.3104
+offset_left = 11.0
+offset_top = 2.0
+offset_right = 2243.0
+offset_bottom = 35.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("8_dqxm8")
