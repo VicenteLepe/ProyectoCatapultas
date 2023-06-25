@@ -130,7 +130,7 @@ func create_pinjoints(building_intersection_dict):
 				add_child(pin_joint)
 
 func check_wheels(building_element_dict):
-	if building_element_dict.Wheel and building_element_dict.Wheel.size():
+	if building_element_dict.Wheel  and building_element_dict.Wheel.size():
 		for base_dict in building_element_dict.Base:
 			base_dict.element_node.has_wheels = true
 	
