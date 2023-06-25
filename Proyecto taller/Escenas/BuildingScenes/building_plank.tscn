@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2b2bbuxkbul1"]
+[gd_scene load_steps=5 format=3 uid="uid://c2b2bbuxkbul1"]
 
 [ext_resource type="TileSet" uid="uid://x4d87314gkjw" path="res://Assets/village props/Texture/props cortados/Plank_tile_set.tres" id="1_c74ad"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/building_plank.gd" id="1_levag"]
 [ext_resource type="Texture2D" uid="uid://cjm4rv3msw6je" path="res://Assets/village props/Texture/props cortados/TX Tablon.png" id="1_uyjgu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ron0e"]
@@ -13,6 +14,7 @@ size = Vector2(40, 10)
 collision_layer = 2
 collision_mask = 3
 input_pickable = true
+script = ExtResource("1_levag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_ron0e")
