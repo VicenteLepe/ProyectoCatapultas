@@ -21,6 +21,8 @@ enum PlayerType {
 
 @export var player: PlayerType
 
+# esto al poner el boton continue
+# tenemos que poner Game.building_element_dict_A = building_element_dict
 
 func _ready():
 	match player:
@@ -59,14 +61,17 @@ func _on_select_element_button_item_selected(_index):
 		base_building_state = true
 
 func populate_intersection_dict(building_element_dict):
+	#importante actualizar el element_node, porque al cambiar de escena seran nulos
+	# cambiar por Game.building_element_dict 
+	#building_intesection_dict = {} y al final return building_intesection_dict
 	# Populate the building_intersection_dict, excluding positions with a count of 1
 	for element_type in building_element_dict:
 		for element in building_element_dict[element_type]:
 			var element_id = element["element_id"]
 			var positions = element["element_positions"]
 			var element_node = element["element_node"] 
-			if element_type == "Wheel":
-					positions = element["element_positions"][0]
+#			if element_type == "Wheel ":
+#					positions = element["element_positions"][0]
 
 			for position in positions:
 				if position not in building_intersection_dict:
@@ -99,7 +104,15 @@ func add_to_element_dict(element, element_type):
 					"element_positions": element_positions,
 					"element_node": element_node
 				})
-
+func remove_element_from_dict(id, element_type):
+	var index = -1
+	for i in building_element_dict[element_type].size():
+		if building_element_dict[element_type][i].element_id == id:
+			index=i
+			break
+	if index>= 0:
+		building_element_dict[element_type].remove_at(index)
+		
 func create_pinjoints(building_intersection_dict):
 	for position in building_intersection_dict:
 		var element_count = len(building_intersection_dict[position])
@@ -116,5 +129,10 @@ func create_pinjoints(building_intersection_dict):
 				pin_joint.disable_collision = true
 				add_child(pin_joint)
 
-
+func check_wheels(building_element_dict):
+	if building_element_dict.Wheel and building_element_dict.Wheel.size():
+		for base_dict in building_element_dict.Base:
+			base_dict.element_node.has_wheels = true
+	
+	
 
