@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl6ul3vtspkio"]
+
+[ext_resource type="Texture2D" uid="uid://bdpieiuewd0vy" path="res://Assets/village props/Texture/props cortados/TX Bucket.png" id="1_a5hxg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(-15, -12, -10, 4, 10, 4, 15, -12, 13, -12, 9, 2, -9, 2, -13, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+z_index = 1
+position = Vector2(0, -4)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_a5hxg")
