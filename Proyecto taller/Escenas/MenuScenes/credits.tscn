@@ -22,10 +22,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.1, 15.1),
+"times": PackedFloat32Array(1, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.606061, 0), Vector2(0.606061, -413.333)]
+"values": [Vector2(0, 0), Vector2(0, -413.333)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_obmei"]
@@ -38,10 +38,10 @@ scale = Vector2(1.65, 1.65)
 script = ExtResource("1_vgkw2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 0.606061
-offset_top = -413.333
-offset_right = 388.606
-offset_bottom = 713.667
+offset_left = 0.589714
+offset_top = -212.571
+offset_right = 388.59
+offset_bottom = 914.429
 theme = SubResource("Theme_elq5r")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
