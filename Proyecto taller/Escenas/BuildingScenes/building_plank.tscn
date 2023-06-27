@@ -11,6 +11,7 @@ size = Vector2(40, 10)
 [node name="building_plank" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+z_index = 2
 collision_layer = 2
 collision_mask = 3
 input_pickable = true
@@ -20,6 +21,7 @@ script = ExtResource("1_levag")
 shape = SubResource("RectangleShape2D_ron0e")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+z_index = 2
 texture = ExtResource("1_uyjgu")
 
 [node name="TileMap" type="TileMap" parent="RigidBody2D"]
