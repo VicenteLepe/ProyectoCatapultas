@@ -1,31 +1,195 @@
-[gd_scene load_steps=2 format=3 uid="uid://bes3q464piqqu"]
+[gd_scene load_steps=11 format=3 uid="uid://dss5bp5jvfy5d"]
 
-[ext_resource type="Script" path="res://Escenas/MenuScenes/credits.gd" id="1_i8jec"]
+[ext_resource type="Script" path="res://Escenas/MenuScenes/credits2.gd" id="1_vgkw2"]
+[ext_resource type="Theme" uid="uid://72o7dmakwn2w" path="res://Resources/credit_theme_only_credits.tres" id="2_tm1ri"]
+[ext_resource type="Theme" uid="uid://x42jp6uslm5t" path="res://Resources/credit_theme_titules.tres" id="3_ga0qt"]
+[ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="3_shnyv"]
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="4_e8xtx"]
+[ext_resource type="Theme" uid="uid://bpcjhox8d7iwh" path="res://Resources/credit_theme_description.tres" id="5_0lxg4"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_i8jec")
+[sub_resource type="Theme" id="Theme_elq5r"]
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 23.0
-offset_top = 6.0
-offset_right = 615.0
-offset_bottom = 154.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kw0s"]
+bg_color = Color(0.0901961, 0.52549, 0.537255, 1)
+
+[sub_resource type="Animation" id="Animation_fv7pb"]
+resource_name = "animation_credit_scene"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -413.333)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_obmei"]
+_data = {
+"animation_credit_scene": SubResource("Animation_fv7pb")
+}
+
+[node name="credits" type="Node2D"]
+scale = Vector2(1.65, 1.65)
+script = ExtResource("1_vgkw2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 0.589714
+offset_top = -212.571
+offset_right = 388.59
+offset_bottom = 914.429
+theme = SubResource("Theme_elq5r")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3kw0s")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
-text = "credits
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Credits" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_tm1ri")
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Developers" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ga0qt")
+theme_override_fonts/font = ExtResource("4_e8xtx")
+theme_override_font_sizes/font_size = 24
+text = "Developers"
+horizontal_alignment = 1
+
+[node name="nosotros" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("5_0lxg4")
+text = "Vicente Lepe
+Matías Maturana
+Cáetan Ossandón
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TTextures" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ga0qt")
+text = "Textures
 "
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="."]
-offset_left = 401.0
-offset_top = 289.0
-offset_right = 629.0
-offset_bottom = 331.0
-text = "return to menu
+[node name="DTextures" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_0lxg4")
+text = "“Taiga: Asset Pack” by Vnitti 
+“Glacial Mountains: Parallax Background” by Vnitti
+“Pixel Art Platformer- Village Props” by Cainos 
+“Legacy Fantasy Bundle” by Anokolisa 
+“Pixelart Tileset Dungeon” by miguelsgp 
+"
+horizontal_alignment = 1
+
+[node name="TMusic" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ga0qt")
+text = "Music
+"
+horizontal_alignment = 1
+
+[node name="DMusic" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_0lxg4")
+text = "aca va la musica"
+horizontal_alignment = 1
+
+[node name="TSFX" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ga0qt")
+text = "SFX
+"
+horizontal_alignment = 1
+
+[node name="DSFX" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_0lxg4")
+text = "aca van los efectos de sonido"
+horizontal_alignment = 1
+
+[node name="TFont" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ga0qt")
+text = "Font
+"
+horizontal_alignment = 1
+
+[node name="DFont" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_0lxg4")
+text = "aca van las fuentes
+
+"
+horizontal_alignment = 1
+
+[node name="TSpecialTT" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ga0qt")
+text = "Special Thanks To
+"
+horizontal_alignment = 1
+
+[node name="DSpecialTT" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_0lxg4")
+text = "Elías Zelanda
+Nadia Decar
+Christopher Marín
+Gabriel Orrego
+Diego García
+"
+horizontal_alignment = 1
+
+[node name="Return-main-menu" type="Button" parent="."]
+offset_left = 307.879
+offset_top = 178.788
+offset_right = 384.879
+offset_bottom = 210.788
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("3_shnyv")
+text = "back
 "
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MarginContainer")
+libraries = {
+"": SubResource("AnimationLibrary_obmei")
+}
+
+[connection signal="pressed" from="Return-main-menu" to="." method="_on_returnmainmenu_pressed"]

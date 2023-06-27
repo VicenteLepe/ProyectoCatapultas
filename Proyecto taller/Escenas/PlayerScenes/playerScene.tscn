@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dusqgtabk1spl"]
 
-[ext_resource type="Script" path="res://Escenas/PlayerScenes/playerScene.gd" id="1_w2u7j"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/playerScene.gd" id="1_2ilxf"]
 [ext_resource type="Texture2D" uid="uid://dfmm0f2tubqfs" path="res://Assets/village props/Texture/props cortados/TX Wheel.png" id="2_amlt6"]
-[ext_resource type="Script" path="res://Escenas/PlayerScenes/Base.gd" id="2_nqjti"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/Base.gd" id="3_6gcle"]
 [ext_resource type="Texture2D" uid="uid://c08tvht7tlshn" path="res://Assets/village props/Texture/props cortados/TX Base.png" id="3_7fwh6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tud71"]
@@ -11,7 +11,7 @@
 size = Vector2(84.4, 11.5)
 
 [node name="Catapult" type="Node2D"]
-script = ExtResource("1_w2u7j")
+script = ExtResource("1_2ilxf")
 
 [node name="Wheel" type="RigidBody2D" parent="."]
 z_index = 1
@@ -59,7 +59,7 @@ node_b = NodePath("../Wheel2")
 collision_layer = 2
 collision_mask = 3
 mass = 100.0
-script = ExtResource("2_nqjti")
+script = ExtResource("3_6gcle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 position = Vector2(0.500002, -3.5)

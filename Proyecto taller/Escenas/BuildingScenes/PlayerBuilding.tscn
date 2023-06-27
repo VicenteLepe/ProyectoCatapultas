@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://p0rth33fp1rp"]
+[gd_scene load_steps=16 format=3 uid="uid://p0rth33fp1rp"]
 
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding.gd" id="1_flj1r"]
 [ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="3_m0i3s"]
-[ext_resource type="PackedScene" uid="uid://dusqgtabk1spl" path="res://Escenas/PlayerScenes/playerScene.tscn" id="3_q873a"]
 [ext_resource type="Texture2D" uid="uid://cux5o1gk1uduc" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="4_8muyl"]
 [ext_resource type="PackedScene" uid="uid://kfp1qdpiwmrf" path="res://Escenas/BuildingScenes/Building_Scene.tscn" id="4_woudb"]
 [ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="5_jb36m"]
@@ -2333,7 +2332,7 @@ sources/0 = SubResource("TileSetAtlasSource_5cbwh")
 
 [sub_resource type="Animation" id="Animation_vguet"]
 resource_name = "animation_label"
-length = 32.0
+length = 44.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2341,10 +2340,10 @@ tracks/0/path = NodePath("AnimationPlayer/Label:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 15, 30, 30.0004),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 26, 40),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(700, 2), Vector2(-680, 2), Vector2(11, 2), Vector2(11, 2)]
+"values": [Vector2(646, 2), Vector2(-1621, 1), Vector2(11, 2)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -2353,7 +2352,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(32),
+"times": PackedFloat32Array(41.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -2367,6 +2366,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_flj1r")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2383,9 +2383,6 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_6plce")
 format = 2
 layer_0/tile_data = PackedInt32Array(393232, 1310720, 11, 458768, 1310720, 11, 262160, 1310720, 9, 327696, 1310720, 10, 262159, 1245184, 9, 262158, 1179648, 9, 262157, 1114112, 9, 327693, 1114112, 10, 393229, 1114112, 10, 458766, 1179648, 12, 393230, 1179648, 11, 327694, 1179648, 10, 327695, 1245184, 10, 393231, 1245184, 11, 458767, 1245184, 12, 458765, 1114112, 11, 458764, 196608, 10, 458763, 131072, 10, 458762, 65536, 10, 458769, 917504, 3, 131088, 1310720, 8, 65552, 1310720, 7, 131075, 1310720, 8, 131078, 1310720, 8, 131085, 1310720, 8, 65549, 1310720, 7, 65542, 1310720, 7, 65539, 1310720, 7, 458755, 851968, 5, 458756, 917504, 5)
-
-[node name="Catapult" parent="." instance=ExtResource("3_q873a")]
-position = Vector2(168, 235)
 
 [node name="Building" parent="." instance=ExtResource("4_woudb")]
 position = Vector2(-1, -26)
@@ -2421,16 +2418,6 @@ theme_override_font_sizes/font_size = 25
 action_mode = 0
 text = "Continue"
 
-[node name="Delete_button" type="Button" parent="Camera2D/UI"]
-layout_mode = 0
-offset_left = -308.0
-offset_top = -103.0
-offset_right = -201.0
-offset_bottom = -70.0
-theme = ExtResource("8_nkjwi")
-toggle_mode = true
-text = "Delete"
-
 [node name="Select_element_button" type="OptionButton" parent="Camera2D/UI"]
 layout_mode = 0
 offset_left = -309.0
@@ -2439,36 +2426,39 @@ offset_right = -237.0
 offset_bottom = -33.0
 theme = ExtResource("8_nkjwi")
 toggle_mode = false
-item_count = 5
+item_count = 6
 selected = 0
 popup/item_0/text = "Build..."
 popup/item_0/id = 0
 popup/item_0/separator = true
-popup/item_1/text = "Plank"
-popup/item_1/id = 1
-popup/item_2/text = "Wheel"
-popup/item_2/id = 2
-popup/item_3/text = "Cable"
-popup/item_3/id = 3
-popup/item_4/text = "Bucket"
-popup/item_4/id = 4
+popup/item_1/text = "Base"
+popup/item_1/id = 5
+popup/item_2/text = "Plank"
+popup/item_2/id = 1
+popup/item_3/text = "Wheel"
+popup/item_3/id = 2
+popup/item_4/text = "Cable"
+popup/item_4/id = 3
+popup/item_5/text = "Bucket"
+popup/item_5/id = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
 method_call_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_nyhhu")
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-offset_left = 700.0
-offset_top = 2.0
-offset_right = 2002.0
-offset_bottom = 35.0
+offset_left = -670.604
+offset_top = 1.41923
+offset_right = 1561.4
+offset_bottom = 34.4192
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("8_dqxm8")
 theme_override_font_sizes/font_size = 32
-text = "You can press the p key once to unlock the building, once more to lock it, and r key to reset the scene"
+text = "You can press the p key once to unlock the building, once more to lock it,  r key to reset the scene and if you want to delete something you can press right mouse click on them."
 
 [connection signal="pressed" from="Camera2D/UI/to Main Menu" to="." method="_on_to_main_menu_pressed"]
 [connection signal="pressed" from="Camera2D/UI/Continue_button" to="." method="_on_continue_button_pressed"]
