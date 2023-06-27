@@ -33,13 +33,6 @@ func _ready():
 #			Game.player_B = base
 			Game.player = "B"
 
-func _on_delete_button_pressed():
-	plank_building_state = false
-	wheel_building_state = false
-	cable_building_state = false
-	bucket_building_state = false
-	base_building_state = false
-	delete_building_state = true
 
 func _on_select_element_button_item_selected(_index):
 	plank_building_state = false
@@ -47,7 +40,6 @@ func _on_select_element_button_item_selected(_index):
 	cable_building_state = false
 	bucket_building_state = false
 	base_building_state = false
-	delete_building_state = false
 
 	if select_element_button.get_selected_id() == 1:
 		plank_building_state = true

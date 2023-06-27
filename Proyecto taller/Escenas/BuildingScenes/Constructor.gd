@@ -32,8 +32,6 @@ func _unhandled_input(event):
 		building_element_scene = preload("res://Escenas/BuildingScenes/building_wheel.tscn")
 		element_type = "Wheel"
 
-	if Building_node.delete_building_state:
-		building_state = false
 
 	if building_state:
 		if event is InputEventMouseButton and event.pressed:
