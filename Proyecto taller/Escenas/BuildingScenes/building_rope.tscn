@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdoqver5qgbdc"]
+
+[ext_resource type="Texture2D" uid="uid://dhd0mm5meic33" path="res://Assets/village props/Texture/props cortados/TX rope segment.png" id="1_4f5hc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7xs4"]
+size = Vector2(8, 2)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 16
+collision_mask = 17
+mass = 0.01
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_a7xs4")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+rotation = 1.5708
+texture = ExtResource("1_4f5hc")
+
+[node name="End" type="Node2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="End"]
+mass = 0.01
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End/RigidBody2D"]
+shape = SubResource("RectangleShape2D_a7xs4")
+
+[node name="Sprite2D" type="Sprite2D" parent="End/RigidBody2D"]
+rotation = 1.5708
+texture = ExtResource("1_4f5hc")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../End/RigidBody2D")
+bias = 0.9
+softness = 16.0

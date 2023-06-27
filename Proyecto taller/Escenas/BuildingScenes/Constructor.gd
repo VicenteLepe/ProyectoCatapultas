@@ -6,6 +6,7 @@ var element_type
 @onready var plank_builder = $Plank_Builder
 @onready var wheel_builder = $Wheel_Builder
 @onready var bucket_builder = $Bucket_Builder
+@onready var rope_builder = $Rope_Builder
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,7 @@ func _ready():
 	plank_builder.Building_node = Building_node
 	wheel_builder.Building_node = Building_node
 	bucket_builder.Building_node = Building_node
+	rope_builder.Building_node = Building_node
 
 
 func _unhandled_input(event):
@@ -38,6 +40,11 @@ func _unhandled_input(event):
 		building_state = Building_node.bucket_building_state
 		building_element_scene = preload("res://Escenas/BuildingScenes/building_bucket.tscn")
 		element_type = "Bucket"
+		
+	if Building_node.rope_building_state:
+		building_state = Building_node.rope_building_state
+		building_element_scene = preload("res://Escenas/BuildingScenes/building_rope.tscn")
+		element_type = "Rope"
 
 
 	if building_state:
@@ -52,6 +59,9 @@ func _unhandled_input(event):
 					wheel_builder.build_element(building_element_scene, element_type, click_pos)
 				if element_type == "Bucket":
 					bucket_builder.build_element(building_element_scene, element_type, click_pos)
+				if element_type == "Rope":
+					rope_builder.build_element(building_element_scene, element_type, click_pos)
+
 
 	if event is InputEventKey and event.keycode == KEY_P and event.pressed:
 		get_tree().paused = not get_tree().paused

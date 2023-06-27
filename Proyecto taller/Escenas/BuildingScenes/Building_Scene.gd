@@ -7,7 +7,7 @@ extends Node2D
 var base_building_state = false
 var plank_building_state = false
 var wheel_building_state = false
-var cable_building_state = false
+var rope_building_state = false
 var bucket_building_state = false
 var delete_building_state = false
 
@@ -37,7 +37,7 @@ func _ready():
 func _on_select_element_button_item_selected(_index):
 	plank_building_state = false
 	wheel_building_state = false
-	cable_building_state = false
+	rope_building_state = false
 	bucket_building_state = false
 	base_building_state = false
 
@@ -46,7 +46,7 @@ func _on_select_element_button_item_selected(_index):
 	elif select_element_button.get_selected_id() == 2:
 		wheel_building_state = true
 	elif select_element_button.get_selected_id() == 3:
-		cable_building_state = true
+		rope_building_state = true
 	elif select_element_button.get_selected_id() == 4:
 		bucket_building_state = true
 	elif select_element_button.get_selected_id() == 5:
@@ -125,6 +125,6 @@ func check_wheels(building_element_dict):
 	if "Wheel" in building_element_dict and building_element_dict.Wheel.size():
 		for base_dict in building_element_dict.Base:
 			base_dict.element_node.has_wheels = true
-	
+
 	
 
