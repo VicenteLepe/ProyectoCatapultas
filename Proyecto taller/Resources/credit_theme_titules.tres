@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://x42jp6uslm5t"]
+
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="1_6r0nf"]
+
+[resource]
+default_font = ExtResource("1_6r0nf")
+default_font_size = 24
+Label/colors/font_color = Color(0.937255, 0.721569, 0.0627451, 1)
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_6r0nf")
