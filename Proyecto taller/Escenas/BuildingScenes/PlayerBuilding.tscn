@@ -2418,16 +2418,6 @@ theme_override_font_sizes/font_size = 25
 action_mode = 0
 text = "Continue"
 
-[node name="Delete_button" type="Button" parent="Camera2D/UI"]
-layout_mode = 0
-offset_left = -308.0
-offset_top = -103.0
-offset_right = -201.0
-offset_bottom = -70.0
-theme = ExtResource("8_nkjwi")
-toggle_mode = true
-text = "Delete"
-
 [node name="Select_element_button" type="OptionButton" parent="Camera2D/UI"]
 layout_mode = 0
 offset_left = -309.0
