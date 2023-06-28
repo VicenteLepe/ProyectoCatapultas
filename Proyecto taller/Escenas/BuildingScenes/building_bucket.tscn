@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl6ul3vtspkio"]
+[gd_scene load_steps=5 format=3 uid="uid://dp8sabcsy2yi8"]
 
 [ext_resource type="Texture2D" uid="uid://bdpieiuewd0vy" path="res://Assets/village props/Texture/props cortados/TX Bucket.png" id="1_a5hxg"]
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/building_plank.gd" id="1_dr8gk"]
