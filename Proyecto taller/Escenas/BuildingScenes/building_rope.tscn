@@ -31,8 +31,9 @@ shape = SubResource("RectangleShape2D_a7xs4")
 rotation = 1.5708
 texture = ExtResource("1_4f5hc")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="."]
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+rotation = 1.5708
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("../End/RigidBody2D")
-bias = 0.9
-softness = 16.0
+stiffness = 0.1
+damping = 0.01
