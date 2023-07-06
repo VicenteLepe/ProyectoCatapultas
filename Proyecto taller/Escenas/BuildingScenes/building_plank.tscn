@@ -15,6 +15,7 @@ z_index = 2
 collision_layer = 2
 collision_mask = 3
 input_pickable = true
+can_sleep = false
 script = ExtResource("1_levag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]

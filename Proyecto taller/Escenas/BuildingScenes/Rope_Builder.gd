@@ -13,7 +13,7 @@ func define_element_shape(_end_pos, _start_pos, _building_element, _rigidbody, _
 	var rope_end = _building_element.get_node_or_null("End")
 	rope_end.position = -Vector2((_end_pos - _start_pos).length()/2,0)
 	
-	var join = _building_element.get_node_or_null("DampedSpringJoint2D")
+	var join = _building_element.get_node_or_null("SpringRope")
 	join.length = (_end_pos - _start_pos).length()
 	join.position = Vector2((_end_pos - _start_pos).length()/2,0)
 	

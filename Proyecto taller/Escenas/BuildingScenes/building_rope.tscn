@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://biy76pwovb8nj"]
+[gd_scene load_steps=4 format=3 uid="uid://biy76pwovb8nj"]
 
 [ext_resource type="Texture2D" uid="uid://dhd0mm5meic33" path="res://Assets/village props/Texture/props cortados/TX rope segment.png" id="1_4f5hc"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/SpringRope.gd" id="2_jghiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7xs4"]
 size = Vector2(8, 2)
@@ -11,6 +12,7 @@ size = Vector2(8, 2)
 collision_layer = 16
 collision_mask = 17
 mass = 0.01
+can_sleep = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_a7xs4")
@@ -23,6 +25,7 @@ texture = ExtResource("1_4f5hc")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="End"]
 mass = 0.01
+can_sleep = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End/RigidBody2D"]
 shape = SubResource("RectangleShape2D_a7xs4")
@@ -31,9 +34,10 @@ shape = SubResource("RectangleShape2D_a7xs4")
 rotation = 1.5708
 texture = ExtResource("1_4f5hc")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+[node name="SpringRope" type="DampedSpringJoint2D" parent="."]
 rotation = 1.5708
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("../End/RigidBody2D")
 stiffness = 0.1
 damping = 0.01
+script = ExtResource("2_jghiy")
