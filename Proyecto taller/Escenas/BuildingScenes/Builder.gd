@@ -15,6 +15,7 @@ func define_element_shape(_end_pos, _start_pos, _building_element, _rigidbody, _
 func build_element(building_element_scene, element_type, click_pos):
 	# this code check if a base exists,and if it does, it does not create another one.
 	var x=0
+	var q=0
 	if element_type == "Base":
 		for element in list:
 			if element[-1] == "Base":
@@ -22,6 +23,13 @@ func build_element(building_element_scene, element_type, click_pos):
 				break
 	if x==1:
 		return
+	if element_type == "Bucket":
+		for element in list:
+			if element[-1]=="Bucket":
+				q=1
+				break
+	if q==1:
+		return			
 	for element in list:
 		var start = element[1][0]
 		var end = element[1][1]
@@ -38,19 +46,30 @@ func build_element(building_element_scene, element_type, click_pos):
 			# don't create element if start and end positions are the same
 			return
 		var building_element = building_element_scene.instantiate()
-		var rigidbody = building_element.get_node_or_null("RigidBody2D")
-		var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
-		var sprite = rigidbody.get_child(1) # assuming sprite is the second child
-		
-		define_element_shape(end_pos, start_pos, building_element, rigidbody, collision_shape, sprite)
-		add_child(building_element)
-		list.append([id, [start_pos, end_pos], building_element.get_child(0), element_type])
-		if rigidbody.has_signal("delete_requested"):
-			rigidbody.delete_requested.connect(_on_delete_requested.bind(building_element, id, element_type))
-		Building_node.add_to_element_dict([id, [start_pos, end_pos], building_element.get_child(0)],element_type)
-		id += 1
-		start_pos = null
-		
+		if element_type =="Rope":
+			var rigidbody =null
+			var collision_shape =null
+			var sprite = null
+			define_element_shape(end_pos, start_pos, building_element, rigidbody, collision_shape, sprite)
+			add_child(building_element)
+			list.append([id, [start_pos, end_pos], building_element.get_child(0), element_type])
+			Building_node.add_to_element_dict([id, [start_pos, end_pos], building_element.get_child(0)],element_type)
+			id += 1
+			start_pos = null
+		else:
+			var rigidbody = building_element.get_node_or_null("RigidBody2D")
+			var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
+			var sprite = rigidbody.get_child(1) # assuming sprite is the second child
+			
+			define_element_shape(end_pos, start_pos, building_element, rigidbody, collision_shape, sprite)
+			add_child(building_element)
+			list.append([id, [start_pos, end_pos], building_element.get_child(0), element_type])
+			if rigidbody.has_signal("delete_requested"):
+				rigidbody.delete_requested.connect(_on_delete_requested.bind(building_element, id, element_type))
+			Building_node.add_to_element_dict([id, [start_pos, end_pos], building_element.get_child(0)],element_type)
+			id += 1
+			start_pos = null
+			
 
 #		for element in list:
 #			Building_node.add_to_element_dict([element[0],element[1],element[2]],element_type)
