@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cii6w56etu1mq"]
+[gd_scene load_steps=16 format=3 uid="uid://cii6w56etu1mq"]
 
 [ext_resource type="Texture2D" uid="uid://damhjfjsf71wt" path="res://Assets/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0_editada.png" id="1_ecqwq"]
 [ext_resource type="PackedScene" uid="uid://dx0rs7bmjp5x2" path="res://Escenas/MenuScenes/pause_menu.tscn" id="4_pp08s"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1rjpsn4qbfpm" path="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" id="10_jmmxr"]
 [ext_resource type="Script" path="res://Escenas/MainScene/Camera2D.gd" id="11_bjspy"]
 [ext_resource type="PackedScene" uid="uid://dusqgtabk1spl" path="res://Escenas/PlayerScenes/playerScene.tscn" id="11_k3veo"]
+[ext_resource type="PackedScene" uid="uid://2up2bsa65gjw" path="res://Escenas/Autobuilder.tscn" id="12_mhtgg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3glge"]
 texture = ExtResource("1_ecqwq")
@@ -782,3 +783,6 @@ motion_mirroring = Vector2(960, 0)
 texture = ExtResource("10_jmmxr")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="Autobuilder" parent="." instance=ExtResource("12_mhtgg")]
+position = Vector2(492, 143)

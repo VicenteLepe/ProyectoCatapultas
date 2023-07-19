@@ -1,108 +1,92 @@
 [gd_scene load_steps=2 format=3 uid="uid://d11i7s8cym6bq"]
 
-[ext_resource type="Script" path="res://a.gd" id="1_cwfee"]
+[ext_resource type="Script" path="res://Escenas/test_dictionary.gd" id="1_yp0vc"]
 
-[node name="Node" type="Node"]
-script = ExtResource("1_cwfee")
+[node name="Dictionary" type="Node"]
+script = ExtResource("1_yp0vc")
 elements = {
 "Base": [{
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":63870862489,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":62209918110,"script":null)
 ,
-"element_positions": [Vector2(224, 224), Vector2(384, 224)]
+"element_positions": [Vector2(192, 224), Vector2(416, 224)]
 }],
 "Bucket": [{
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":135543130387,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":114521278757,"script":null)
 ,
-"element_positions": [Vector2(384, 192), Vector2(224, 128)]
+"element_positions": [Vector2(384, 160), Vector2(192, 160)]
 }],
 "Plank": [{
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":79859549328,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":94053074070,"script":null)
 ,
-"element_positions": [Vector2(224, 224), Vector2(224, 192)]
+"element_positions": [Vector2(192, 224), Vector2(384, 160)]
 }, {
 "element_id": 1,
-"element_node": Object(EncodedObjectAsID,"object_id":83466650776,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":95529470234,"script":null)
 ,
-"element_positions": [Vector2(384, 224), Vector2(384, 192)]
-}, {
-"element_id": 2,
-"element_node": Object(EncodedObjectAsID,"object_id":85479916725,"script":null)
-,
-"element_positions": [Vector2(384, 192), Vector2(224, 192)]
+"element_positions": [Vector2(384, 160), Vector2(416, 224)]
 }],
 "Wheel": [{
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":102357796002,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":72645347608,"script":null)
 ,
-"element_positions": [Vector2(224, 224), Vector2(256, 224)]
+"element_positions": [Vector2(192, 224), Vector2(160, 224)]
 }, {
-"element_id": 2,
-"element_node": Object(EncodedObjectAsID,"object_id":144669935915,"script":null)
+"element_id": 1,
+"element_node": Object(EncodedObjectAsID,"object_id":76218894613,"script":null)
 ,
-"element_positions": [Vector2(384, 224), Vector2(416, 224)]
+"element_positions": [Vector2(416, 224), Vector2(448, 224)]
 }]
 }
 intersections = {
-Vector2(224, 192): [{
+Vector2(192, 224): [{
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":79859549328,"script":null)
-,
-"element_type": "Plank"
-}, {
-"element_id": 2,
-"element_node": Object(EncodedObjectAsID,"object_id":85479916725,"script":null)
-,
-"element_type": "Plank"
-}],
-Vector2(224, 224): [{
-"element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":63870862489,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":62209918110,"script":null)
 ,
 "element_type": "Base"
 }, {
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":79859549328,"script":null)
-,
-"element_type": "Plank"
-}, {
-"element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":102357796002,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":72645347608,"script":null)
 ,
 "element_type": "Wheel"
+}, {
+"element_id": 0,
+"element_node": Object(EncodedObjectAsID,"object_id":94053074070,"script":null)
+,
+"element_type": "Plank"
 }],
-Vector2(384, 192): [{
-"element_id": 1,
-"element_node": Object(EncodedObjectAsID,"object_id":83466650776,"script":null)
+Vector2(384, 160): [{
+"element_id": 0,
+"element_node": Object(EncodedObjectAsID,"object_id":94053074070,"script":null)
 ,
 "element_type": "Plank"
 }, {
-"element_id": 2,
-"element_node": Object(EncodedObjectAsID,"object_id":85479916725,"script":null)
+"element_id": 1,
+"element_node": Object(EncodedObjectAsID,"object_id":95529470234,"script":null)
 ,
 "element_type": "Plank"
 }, {
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":135543130387,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":114521278757,"script":null)
 ,
 "element_type": "Bucket"
 }],
-Vector2(384, 224): [{
+Vector2(416, 224): [{
 "element_id": 0,
-"element_node": Object(EncodedObjectAsID,"object_id":63870862489,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":62209918110,"script":null)
 ,
 "element_type": "Base"
 }, {
 "element_id": 1,
-"element_node": Object(EncodedObjectAsID,"object_id":83466650776,"script":null)
-,
-"element_type": "Plank"
-}, {
-"element_id": 2,
-"element_node": Object(EncodedObjectAsID,"object_id":144669935915,"script":null)
+"element_node": Object(EncodedObjectAsID,"object_id":76218894613,"script":null)
 ,
 "element_type": "Wheel"
+}, {
+"element_id": 1,
+"element_node": Object(EncodedObjectAsID,"object_id":95529470234,"script":null)
+,
+"element_type": "Plank"
 }]
 }
