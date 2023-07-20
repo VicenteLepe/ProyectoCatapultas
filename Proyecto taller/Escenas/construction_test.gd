@@ -111,6 +111,8 @@ func create_pinjoints(intersections):
 			for j in range(i + 1, element_count):
 				var first_element = intersections[position][i]["element_node"]
 				var second_element = intersections[position][j]["element_node"]
+				print(first_element)
+				print(second_element)
 				var pin_joint = PinJoint2D.new()
 				pin_joint.node_a = first_element.get_path()
 				pin_joint.node_b = second_element.get_path()
