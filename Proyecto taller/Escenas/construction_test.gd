@@ -8,6 +8,7 @@ var building_bucket_scene = preload("res://Escenas/BuildingScenes/building_bucke
 var test_dictionary = preload("res://Escenas/test_dictionary.tscn")
 
 @export var elements : Dictionary
+#@export var intersections : Dictionary
 @export var intersections : Dictionary
 
 func base_shape(end_pos, start_pos, building_base, collision_shape, sprite):
@@ -105,10 +106,9 @@ func create_pinjoints(intersections):
 			for j in range(i + 1, element_count):
 				var first_element = intersections[position][i]["element_node"]
 				var second_element = intersections[position][j]["element_node"]
-
 				var pin_joint = PinJoint2D.new()
-				pin_joint.node_a = first_element.get_path()
-				pin_joint.node_b = second_element.get_path()
+				pin_joint.node_a = first_element
+				pin_joint.node_b = second_element
 				pin_joint.softness = 0
 				pin_joint.position = position
 				pin_joint.disable_collision = true
@@ -127,6 +127,7 @@ func _ready():
 		var end_pos = base["element_positions"][1]
 		var start_pos = base["element_positions"][0]
 		var building_base = building_base_scene.instantiate()
+		base["element_node"] = building_base.get_child(0)
 		var rigidbody = building_base.get_node_or_null("RigidBody2D")
 		var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
 		var sprite = rigidbody.get_child(1) # assuming sprite is the second child
@@ -138,6 +139,7 @@ func _ready():
 		var end_pos = plank["element_positions"][1]
 		var start_pos = plank["element_positions"][0]
 		var building_plank = building_plank_scene.instantiate()
+		plank["element_node"] = building_plank.get_child(0)
 		var rigidbody = building_plank.get_node_or_null("RigidBody2D")
 		var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
 		var sprite = rigidbody.get_child(1) # assuming sprite is the second child
@@ -149,6 +151,7 @@ func _ready():
 		var end_pos = wheel["element_positions"][1]
 		var start_pos = wheel["element_positions"][0]
 		var building_wheel = building_wheel_scene.instantiate()
+		wheel["element_node"] = building_wheel.get_child(0)
 		var rigidbody = building_wheel.get_node_or_null("RigidBody2D")
 		var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
 		var sprite = rigidbody.get_child(1) # assuming sprite is the second child
@@ -160,6 +163,7 @@ func _ready():
 		var end_pos = bucket["element_positions"][1]
 		var start_pos = bucket["element_positions"][0]
 		var building_bucket = building_bucket_scene.instantiate()
+		bucket["element_node"] = building_bucket.get_child(0)
 		var rigidbody = building_bucket.get_node_or_null("RigidBody2D")
 		var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
 		var sprite = rigidbody.get_child(1) # assuming sprite is the second child
@@ -168,5 +172,5 @@ func _ready():
 	
 	populate_intersection_dict(elements)
 	create_pinjoints(intersections)
-	check_wheels(elements)
+	#check_wheels(elements)
 	
