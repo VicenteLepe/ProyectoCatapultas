@@ -2462,4 +2462,5 @@ text = "You can press the p key once to unlock the building, once more to lock i
 
 [connection signal="pressed" from="Camera2D/UI/to Main Menu" to="." method="_on_to_main_menu_pressed"]
 [connection signal="pressed" from="Camera2D/UI/Continue_button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Camera2D/UI/Continue_button" to="Building" method="_on_continue_button_pressed"]
 [connection signal="item_selected" from="Camera2D/UI/Select_element_button" to="Building" method="_on_select_element_button_item_selected"]
