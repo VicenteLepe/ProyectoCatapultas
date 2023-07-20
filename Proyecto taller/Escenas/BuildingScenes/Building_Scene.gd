@@ -132,9 +132,6 @@ func check_wheels(building_element_dict):
 func save_data():
 	var file = FileAccess.open("user://data.json", FileAccess.WRITE)
 	file.store_var(building_element_dict)
-	print("B_element_dict: ",building_element_dict)
-
-
 
 func _on_continue_button_pressed():
 	save_data()

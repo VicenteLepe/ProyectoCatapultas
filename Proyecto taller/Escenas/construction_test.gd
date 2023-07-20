@@ -112,8 +112,8 @@ func create_pinjoints(intersections):
 				var first_element = intersections[position][i]["element_node"]
 				var second_element = intersections[position][j]["element_node"]
 				var pin_joint = PinJoint2D.new()
-				#pin_joint.node_a = first_element
-				#pin_joint.node_b = second_element
+				pin_joint.node_a = first_element.get_path()
+				pin_joint.node_b = second_element.get_path()
 				pin_joint.softness = 0
 				pin_joint.position = position
 				pin_joint.disable_collision = true
@@ -129,6 +129,7 @@ func check_wheels(elements):
 func _ready():
 	elements = load_data()
 	if "Base" in elements:
+		
 		var base_dictionary = elements["Base"]
 		for base in base_dictionary:
 			var end_pos = base["element_positions"][1]
