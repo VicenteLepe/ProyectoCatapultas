@@ -134,3 +134,7 @@ func save_data():
 	file.store_var(building_element_dict)
 	print("B_element_dict: ",building_element_dict)
 
+
+
+func _on_continue_button_pressed():
+	save_data()
