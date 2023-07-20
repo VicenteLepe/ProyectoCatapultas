@@ -785,4 +785,4 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Autobuilder" parent="." instance=ExtResource("12_mhtgg")]
-position = Vector2(492, 143)
+position = Vector2(62, -32)
