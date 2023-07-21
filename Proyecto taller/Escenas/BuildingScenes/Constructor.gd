@@ -93,9 +93,7 @@ func _unhandled_input(event):
 
 
 	if event is InputEventKey and event.keycode == KEY_P and event.pressed:
-		get_tree().paused = not get_tree().paused
-
-	if event is InputEventKey and event.keycode == KEY_X and event.pressed:
 		Building_node.populate_intersection_dict(Building_node.building_element_dict)
 		Building_node.create_pinjoints(Building_node.building_intersection_dict)
 		Building_node.check_wheels(Building_node.building_element_dict)
+		get_tree().paused = not get_tree().paused
