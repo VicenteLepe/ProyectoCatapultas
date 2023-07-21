@@ -173,13 +173,12 @@ func _ready():
 	
 	match player:
 		PlayerType.A:
-	#			Game.player_A = base
+			#Game.player_A = base
 			Game.player = "A"
 		PlayerType.B:
-	#			Game.player_B = base
+			#Game.player_B = base
 			Game.player = "B"
-		
-		
+
 	elements = load_data_player1()
 	Game.positions_dict = {}
 
@@ -200,7 +199,8 @@ func _ready():
 			if positions[0] not in Game.positions_dict:
 				Game.positions_dict[positions[0]] = base["element_node"]
 			if positions[1] not in Game.positions_dict:
-				Game.positions_dict[positions[1]] = base["element_node"]
+				Game.positions_dict[positions[1]] = base["element_node"]	
+			Game.cam_A = base["element_node"]
 	
 	if "Bucket" in elements:
 		var bucket_dictionary = elements["Bucket"]
