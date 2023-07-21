@@ -5,16 +5,28 @@ func load_data():
 	var data = file.get_var() 
 	return data
 
+
 var building_base_scene = preload("res://Escenas/BuildingScenes/building_base.tscn")
 var building_plank_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")
 var building_wheel_scene = preload("res://Escenas/BuildingScenes/building_wheel.tscn")
 var building_bucket_scene = preload("res://Escenas/BuildingScenes/building_bucket.tscn")
+var building_rope_scene = preload("res://Escenas/BuildingScenes/building_rope.tscn")
 
 var test_dictionary = preload("res://Escenas/test_dictionary.tscn")
 
 @export var elements : Dictionary
 #@export var intersections : Dictionary
 @export var intersections : Dictionary
+
+enum PlayerType {
+	A, 
+	B
+}
+
+@export var player: PlayerType
+
+var object1
+var object2
 
 func base_shape(end_pos, start_pos, building_base, collision_shape, sprite):
 	# define the position of the plank
@@ -71,6 +83,25 @@ func bucket_shape(end_pos, start_pos, building_bucket, collision_shape, sprite):
 	collision_shape.shape.extents.x = length/2 
 	sprite.scale.x = scale_factor
 
+func rope_shape(_end_pos, _start_pos, _building_element, object1, object2):		
+	# define the position of the plank
+	_building_element.position = (_start_pos + _end_pos) / 2
+	_building_element.rotation = (_end_pos - _start_pos).angle()
+	var join = _building_element.get_node_or_null("SpringRope")
+	join.length = (_end_pos - _start_pos).length()
+	join.position = Vector2((_end_pos - _start_pos).length()/2,0)
+	join.node_a = object1.get_path()
+	join.node_b = object2.get_path()
+	
+
+	# calculate the scale factor
+	var length = (_end_pos - _start_pos).length()
+	#var collision_shape_length = _collision_shape.shape.extents.x * 2
+	#var scale_factor = length / collision_shape_length
+	# scale the length of the plank
+	#_collision_shape.shape.extents.x = length/2 
+	#_sprite.scale.x = scale_factor
+
 
 func populate_intersection_dict(elements):
 	#importante actualizar el element_node, porque al cambiar de escena seran nulos
@@ -78,28 +109,30 @@ func populate_intersection_dict(elements):
 	#building_intesection_dict = {} y al final return building_intesection_dict
 	# Populate the building_intersection_dict, excluding positions with a count of 1
 	for element_type in elements:
-		for element in elements[element_type]:
-			var element_id = element["element_id"]
-			var positions = element["element_positions"]
-			var element_node = element["element_node"] 
-#			if element_type == "Wheel ":
-#					positions = element["element_positions"][0]
+		if element_type != "Rope":
+			for element in elements[element_type]:
+				if element_type != "Rope":
+					var element_id = element["element_id"]
+					var positions = element["element_positions"]
+					var element_node = element["element_node"] 
+		#			if element_type == "Wheel ":
+		#					positions = element["element_positions"][0]
 
-			for position in positions:
-				if position not in intersections:
-					intersections[position] = []
-				var exists = false
-				for item in intersections[position]:
-					if item["element_type"] == element_type and item["element_id"] == element_id:
-						exists = true
-						break
+					for position in positions:
+						if position not in intersections:
+							intersections[position] = []
+						var exists = false
+						for item in intersections[position]:
+							if item["element_type"] == element_type and item["element_id"] == element_id:
+								exists = true
+								break
 
-				if not exists:
-					intersections[position].append({
-						"element_type": element_type,
-						"element_id": element_id,
-						"element_node": element_node
-					})
+						if not exists:
+							intersections[position].append({
+								"element_type": element_type,
+								"element_id": element_id,
+								"element_node": element_node
+							})
 	for position in intersections.keys():
 		if len(intersections[position])==1:
 			intersections.erase(position)
@@ -127,9 +160,20 @@ func check_wheels(elements):
 
 
 func _ready():
-	elements = load_data()
-	if "Base" in elements:
+	
+	match player:
+		PlayerType.A:
+	#			Game.player_A = base
+			Game.player = "A"
+		PlayerType.B:
+	#			Game.player_B = base
+			Game.player = "B"
 		
+		
+	elements = load_data()
+	Game.positions_dict = {}
+
+	if "Base" in elements:
 		var base_dictionary = elements["Base"]
 		for base in base_dictionary:
 			var end_pos = base["element_positions"][1]
@@ -142,6 +186,31 @@ func _ready():
 			base_shape(end_pos, start_pos, building_base, collision_shape, sprite)
 			add_child(building_base)
 			
+			var positions = base["element_positions"]
+			if positions[0] not in Game.positions_dict:
+				Game.positions_dict[positions[0]] = base["element_node"]
+			if positions[1] not in Game.positions_dict:
+				Game.positions_dict[positions[1]] = base["element_node"]
+	
+	if "Bucket" in elements:
+		var bucket_dictionary = elements["Bucket"]
+		for bucket in bucket_dictionary:
+			var end_pos = bucket["element_positions"][1]
+			var start_pos = bucket["element_positions"][0]
+			var building_bucket = building_bucket_scene.instantiate()
+			bucket["element_node"] = building_bucket.get_child(0)
+			var rigidbody = building_bucket.get_node_or_null("RigidBody2D")
+			var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
+			var sprite = rigidbody.get_child(1) # assuming sprite is the second child
+			bucket_shape(end_pos, start_pos, building_bucket, collision_shape, sprite)
+			add_child(building_bucket)
+			
+			var positions = bucket["element_positions"]
+			if positions[0] not in Game.positions_dict:
+				Game.positions_dict[positions[0]] = bucket["element_node"]
+			if positions[1] not in Game.positions_dict:
+				Game.positions_dict[positions[1]] = bucket["element_node"]
+	
 	if "Plank" in elements:
 		var plank_dictionary = elements["Plank"]
 		for plank in plank_dictionary:
@@ -155,6 +224,12 @@ func _ready():
 			plank_shape(end_pos, start_pos, building_plank, collision_shape, sprite)
 			add_child(building_plank)
 			
+			var positions = plank["element_positions"]
+			if positions[0] not in Game.positions_dict:
+				Game.positions_dict[positions[0]] = plank["element_node"]
+			if positions[1] not in Game.positions_dict:
+				Game.positions_dict[positions[1]] = plank["element_node"]
+			
 	if "Wheel" in elements:
 		var wheel_dictionary = elements["Wheel"]
 		for wheel in wheel_dictionary:
@@ -167,20 +242,23 @@ func _ready():
 			var sprite = rigidbody.get_child(1) # assuming sprite is the second child
 			wheel_shape(end_pos, start_pos, building_wheel, collision_shape, sprite)
 			add_child(building_wheel)
+	
+	if "Rope" in elements:
+		var rope_dictionary = elements["Rope"]
+		print(rope_dictionary)
+		for rope in rope_dictionary:
+			var end_pos = rope["element_positions"][1]
+			var start_pos = rope["element_positions"][0]
+			var building_rope = building_rope_scene.instantiate()
+			if start_pos in Game.positions_dict:
+				object2 = Game.positions_dict[start_pos]
+			if end_pos in Game.positions_dict:
+				object1 = Game.positions_dict[end_pos]
+			rope_shape(end_pos, start_pos, building_rope, object1, object2)
+			add_child(building_rope)
 			
-	if "Bucket" in elements:
-		var bucket_dictionary = elements["Bucket"]
-		for bucket in bucket_dictionary:
-			var end_pos = bucket["element_positions"][1]
-			var start_pos = bucket["element_positions"][0]
-			var building_bucket = building_bucket_scene.instantiate()
-			bucket["element_node"] = building_bucket.get_child(0)
-			var rigidbody = building_bucket.get_node_or_null("RigidBody2D")
-			var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
-			var sprite = rigidbody.get_child(1) # assuming sprite is the second child
-			bucket_shape(end_pos, start_pos, building_bucket, collision_shape, sprite)
-			add_child(building_bucket)
-
+			
+		
 	populate_intersection_dict(elements)
 	create_pinjoints(intersections)
 #	#check_wheels(elements)

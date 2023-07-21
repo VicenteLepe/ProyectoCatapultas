@@ -44,21 +44,16 @@ func build_element(building_element_scene, element_type, click_pos):
 		# first click, record start position
 		start_pos = get_local_mouse_position()
 		start_pos = snapped(start_pos, Vector2(grid_size, grid_size))
-		
-		#temp
 		if element_type == "Rope":
 			if start_pos in Game.positions_dict:
 				object2 = Game.positions_dict[start_pos]
 			else:
 				start_pos = null
 				return
-	
 	else:
 		# second click, create element
 		var end_pos = get_local_mouse_position()
 		end_pos = snapped(end_pos, Vector2(grid_size, grid_size))
-		
-		#temp
 		if element_type == "Rope":
 			if end_pos in Game.positions_dict:
 				object1 = Game.positions_dict[end_pos]
