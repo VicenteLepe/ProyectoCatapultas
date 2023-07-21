@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		_tween = create_tween()
 		_tween.tween_property(self, "rest_length", length, back_to_rest_time)
 		_release()
-	print(rest_length)
+	
 
 
 func _release():

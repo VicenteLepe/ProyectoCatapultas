@@ -7,11 +7,12 @@
 [node name="SpringRope" type="DampedSpringJoint2D" parent="."]
 rotation = 1.5708
 length = 51.0
-stiffness = 50.0
-damping = 0.01
+stiffness = 64.0
+damping = 0.24
 script = ExtResource("2_jghiy")
 max_compression_percentage = 0.6
-compress_time = 5
+launch_force = 2
+compress_time = 3
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, -50, 0)
