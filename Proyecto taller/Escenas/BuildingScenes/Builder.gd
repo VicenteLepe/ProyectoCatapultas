@@ -51,6 +51,7 @@ func build_element(building_element_scene, element_type, click_pos):
 				object2 = Game.positions_dict[start_pos]
 			else:
 				start_pos = null
+				return
 	
 	else:
 		# second click, create element
@@ -63,6 +64,7 @@ func build_element(building_element_scene, element_type, click_pos):
 				object1 = Game.positions_dict[end_pos]
 			else:
 				end_pos = null
+				return
 		
 		if end_pos == start_pos:
 			# don't create element if start and end positions are the same
