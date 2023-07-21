@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+class_name player_base
+
 var has_wheels = false
 var player = ""
 signal delete_requested
@@ -23,3 +25,7 @@ func _physics_process(_delta):
 		set_linear_velocity(Vector2(-150, get_linear_velocity().y))
 	else:
 		set_linear_velocity(Vector2((get_linear_velocity().x - get_linear_velocity().x * 0.5), get_linear_velocity().y))
+
+func take_damage():
+	print("Auch base")
+	print(player)

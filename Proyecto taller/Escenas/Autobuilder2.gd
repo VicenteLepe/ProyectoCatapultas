@@ -38,8 +38,6 @@ func base_shape(end_pos, start_pos, building_base, rigidbody, collision_shape, s
 	collision_shape.shape.extents.x = length/2
 	sprite.scale.x = length/85
 	var Area_shape = rigidbody.get_child(2).get_child(0)
-	print(Area_shape)
-	print(length)
 	Area_shape.shape.extents.x = length/2
 	building_base.get_child(0).player = Game.player
 
@@ -259,7 +257,6 @@ func _ready():
 	
 	if "Rope" in elements:
 		var rope_dictionary = elements["Rope"]
-		print(rope_dictionary)
 		for rope in rope_dictionary:
 			var end_pos = rope["element_positions"][1]
 			var start_pos = rope["element_positions"][0]

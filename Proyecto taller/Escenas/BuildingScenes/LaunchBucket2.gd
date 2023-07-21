@@ -28,3 +28,7 @@ func fire():
 		await get_tree().create_timer(2).timeout
 		projectile.queue_free()
 		projectile = null
+		
+func take_damage():
+	print("Auch bucket")
+	print("B")
