@@ -1,10 +1,12 @@
 extends Node2D
 @onready var animation_player = $AnimationPlayer
 @onready var label = $AnimationPlayer/Label
+@onready var animation_player_segundo = $AnimationPlayer_segundo
+@onready var player_1 = $"AnimationPlayer_segundo/Player 1"
 
 func _ready():
 	animation_player.play("animation_label")
-	
+	animation_player_segundo.play(("player_1"))
 func hide_label():
 	label.hide()
 func _input(event):

@@ -2365,6 +2365,27 @@ _data = {
 "animation_label": SubResource("Animation_vguet")
 }
 
+[sub_resource type="Animation" id="Animation_eacwp"]
+resource_name = "player_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/Player 2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3teha"]
+_data = {
+"player_2": SubResource("Animation_eacwp")
+}
+
 [node name="Node2D" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_ytnwf")
@@ -2450,22 +2471,30 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-offset_left = -670.604
-offset_top = 1.41923
-offset_right = 1561.4
-offset_bottom = 34.4192
+offset_left = 628.562
+offset_top = 1.99231
+offset_right = 2860.57
+offset_bottom = 34.9923
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("8_mbqon")
 theme_override_font_sizes/font_size = 32
 text = "You can press the p key once to unlock the building, once more to lock it,  r key to reset the scene and if you want to delete something you can press right mouse click on them."
 
-[node name="Player 2" type="Label" parent="."]
-offset_left = 37.0
-offset_top = -30.0
-offset_right = 119.0
-offset_bottom = -4.0
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3teha")
+}
+
+[node name="Player 2" type="Label" parent="AnimationPlayer2"]
+modulate = Color(0.65098, 0.929412, 0, 1)
+offset_left = 260.0
+offset_top = 68.0
+offset_right = 364.0
+offset_bottom = 101.0
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("6_3cu7v")
+theme_override_font_sizes/font_size = 32
 text = "Player 2"
 
 [connection signal="pressed" from="Camera2D/UI/to player 1" to="." method="_on_to_player_1_pressed"]
