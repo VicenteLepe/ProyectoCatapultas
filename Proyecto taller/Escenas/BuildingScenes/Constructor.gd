@@ -21,30 +21,58 @@ func _ready():
 
 
 func _unhandled_input(event):
-	if Building_node.base_building_state:
+	if Building_node.base_building_state  and element_type != "Base":
 		building_state = Building_node.base_building_state
 		building_element_scene = preload("res://Escenas/BuildingScenes/building_base.tscn")
 		element_type = "Base"
 		
-	if Building_node.plank_building_state:
+	if Building_node.plank_building_state  and element_type != "Plank":
 		building_state = Building_node.plank_building_state
 		building_element_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")	
 		element_type = "Plank"
 
-	if Building_node.wheel_building_state:
+	if Building_node.wheel_building_state  and element_type != "Wheel":
 		building_state = Building_node.wheel_building_state
 		building_element_scene = preload("res://Escenas/BuildingScenes/building_wheel.tscn")
 		element_type = "Wheel"
 		
-	if Building_node.bucket_building_state:
+	if Building_node.bucket_building_state  and element_type != "Bucket":
 		building_state = Building_node.bucket_building_state
 		building_element_scene = preload("res://Escenas/BuildingScenes/building_bucket.tscn")
 		element_type = "Bucket"
 		
-	if Building_node.rope_building_state:
+	if Building_node.rope_building_state and element_type != "Rope":
 		building_state = Building_node.rope_building_state
 		building_element_scene = preload("res://Escenas/BuildingScenes/building_rope.tscn")
 		element_type = "Rope"
+		Game.positions_dict = {}
+		if "Base" in Building_node.building_element_dict:
+			for base in Building_node.building_element_dict["Base"]:
+				var positions = base["element_positions"]
+				if positions[0] not in Game.positions_dict:
+					Game.positions_dict[positions[0]] = base["element_node"]
+				if positions[1] not in Game.positions_dict:
+					Game.positions_dict[positions[1]] = base["element_node"]
+		
+		if "Bucket" in Building_node.building_element_dict:
+			for bucket in Building_node.building_element_dict["Bucket"]:
+				var positions = bucket["element_positions"]
+				if positions[0] not in Game.positions_dict:
+					Game.positions_dict[positions[0]] = bucket["element_node"]
+				if positions[1] not in Game.positions_dict:
+					Game.positions_dict[positions[1]] = bucket["element_node"]
+		
+		if "Plank" in Building_node.building_element_dict:
+			for plank in Building_node.building_element_dict["Plank"]:
+				var positions = plank["element_positions"]
+				if positions[0] not in Game.positions_dict:
+					Game.positions_dict[positions[0]] = plank["element_node"]
+				if positions[1] not in Game.positions_dict:
+					Game.positions_dict[positions[1]] = plank["element_node"]
+		#To Do
+		var positions = Game.positions_dict.keys()
+		
+			
 
 
 	if building_state:

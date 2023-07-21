@@ -9,7 +9,13 @@ var list = []
 var id = 0
 var Building_node
 
+var object1
+var object2
+
 func define_element_shape(_end_pos, _start_pos, _building_element, _rigidbody, _collision_shape, _sprite):
+	pass
+	
+func define_rope_shape(_end_pos, _start_pos, _building_element, object1, object2):
 	pass
 
 func build_element(building_element_scene, element_type, click_pos):
@@ -38,19 +44,32 @@ func build_element(building_element_scene, element_type, click_pos):
 		# first click, record start position
 		start_pos = get_local_mouse_position()
 		start_pos = snapped(start_pos, Vector2(grid_size, grid_size))
+		
+		#temp
+		if element_type == "Rope":
+			if start_pos in Game.positions_dict:
+				object2 = Game.positions_dict[start_pos]
+			else:
+				start_pos = null
+	
 	else:
 		# second click, create element
 		var end_pos = get_local_mouse_position()
 		end_pos = snapped(end_pos, Vector2(grid_size, grid_size))
+		
+		#temp
+		if element_type == "Rope":
+			if end_pos in Game.positions_dict:
+				object1 = Game.positions_dict[end_pos]
+			else:
+				end_pos = null
+		
 		if end_pos == start_pos:
 			# don't create element if start and end positions are the same
 			return
 		var building_element = building_element_scene.instantiate()
 		if element_type =="Rope":
-			var rigidbody =null
-			var collision_shape =null
-			var sprite = null
-			define_element_shape(end_pos, start_pos, building_element, rigidbody, collision_shape, sprite)
+			define_rope_shape(end_pos, start_pos, building_element, object1, object2)
 			add_child(building_element)
 			list.append([id, [start_pos, end_pos], building_element.get_child(0), element_type])
 			Building_node.add_to_element_dict([id, [start_pos, end_pos], building_element.get_child(0)],element_type)

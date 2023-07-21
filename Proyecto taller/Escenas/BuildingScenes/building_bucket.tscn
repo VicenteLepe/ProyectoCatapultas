@@ -11,9 +11,11 @@ size = Vector2(40, 10)
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+scale = Vector2(1.0182, 1)
 collision_layer = 16
 collision_mask = 25
 input_pickable = true
+mass = 0.5
 can_sleep = false
 script = ExtResource("1_dr8gk")
 
@@ -29,6 +31,7 @@ texture = ExtResource("2_5kj2e")
 z_index = 1
 collision_layer = 16
 collision_mask = 25
+mass = 0.5
 can_sleep = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bucket/RigidBody2D2"]

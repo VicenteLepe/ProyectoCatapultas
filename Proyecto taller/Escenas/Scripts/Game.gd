@@ -4,5 +4,7 @@ var player
 var player_A 
 var player_B 
 
+var positions_dict = {}
+
 var building_element_dict_A
 var building_element_dict_B
