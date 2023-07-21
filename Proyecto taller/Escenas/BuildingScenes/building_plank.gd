@@ -24,7 +24,7 @@ func fire():
 		projectile = projectile_scene.instantiate() as Projectile
 		get_tree().root.add_child(projectile)
 		projectile.position = bucket.global_position
-		projectile.apply_central_impulse(bucket.global_position - marker.global_position)
-		await get_tree().create_timer(5).timeout
+		projectile.apply_central_impulse(1000*bucket.global_position.direction_to(marker.global_position))
+		await get_tree().create_timer(2).timeout
 		projectile.queue_free()
 		projectile = null

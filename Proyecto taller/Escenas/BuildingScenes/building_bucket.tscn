@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp8sabcsy2yi8"]
+[gd_scene load_steps=6 format=3 uid="uid://dp8sabcsy2yi8"]
 
 [ext_resource type="Texture2D" uid="uid://bdpieiuewd0vy" path="res://Assets/village props/Texture/props cortados/TX Bucket.png" id="1_a5hxg"]
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/building_plank.gd" id="1_dr8gk"]
 [ext_resource type="Texture2D" uid="uid://cjm4rv3msw6je" path="res://Assets/village props/Texture/props cortados/TX Tablon.png" id="2_5kj2e"]
+[ext_resource type="PackedScene" uid="uid://cyue345l6y43a" path="res://Escenas/MainScene/Projectile.tscn" id="2_6yx0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bspe"]
 resource_local_to_scene = true
@@ -18,6 +19,7 @@ input_pickable = true
 mass = 0.5
 can_sleep = false
 script = ExtResource("1_dr8gk")
+projectile_scene = ExtResource("2_6yx0m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_7bspe")

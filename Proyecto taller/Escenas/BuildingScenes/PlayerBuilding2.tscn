@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bq0bbwi3w73p7"]
+[gd_scene load_steps=18 format=3 uid="uid://bq0bbwi3w73p7"]
 
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding2.gd" id="1_ytnwf"]
 [ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="2_b6sl6"]
