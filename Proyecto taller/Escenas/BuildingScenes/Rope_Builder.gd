@@ -22,15 +22,6 @@ func define_rope_shape(_end_pos, _start_pos, _building_element, object1, object2
 	object1.add_child(node_b)
 	node_b.global_position = _end_pos + global_position
 	line.setup(node_a, node_b)
-	
-	var sprite_a = Sprite2D.new()
-	sprite_a.texture = godot
-	node_a.add_child(sprite_a)
-	
-	var sprite_b = Sprite2D.new()
-	sprite_b.texture = godot
-	sprite_b.modulate = Color.DARK_GOLDENROD
-	node_b.add_child(sprite_b)
 
 	# calculate the scale factor
 	var length = (_end_pos - _start_pos).length()

@@ -12,9 +12,9 @@ func setup(new_node_a: Node2D, new_node_b: Node2D):
 	
 func _process(delta):
 	if node_a and node_b:
-		points[0] = -(node_a.global_position - global_position)
+		points[0] = node_a.global_position - global_position
 		points[1] = node_b.global_position - global_position
-		
-		
-		
+
+func _ready():
+	top_level = true
 	
