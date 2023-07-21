@@ -12,4 +12,7 @@ func define_element_shape(_end_pos, _start_pos, _building_element, _rigidbody, _
 	_collision_shape.shape.extents.x = length/2
 	_sprite.scale.x = length/85
 	
+	var Area_shape = _rigidbody.get_child(2).get_child(0)
+	Area_shape.shape.extents.x = length/2
+	
 	_building_element.get_child(0).player = Game.player

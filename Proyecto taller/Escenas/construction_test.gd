@@ -28,7 +28,7 @@ enum PlayerType {
 var object1
 var object2
 
-func base_shape(end_pos, start_pos, building_base, collision_shape, sprite):
+func base_shape(end_pos, start_pos, building_base, rigidbody, collision_shape, sprite):
 	# define the position of the plank
 	building_base.position = (start_pos + end_pos) / 2
 	building_base.rotation = (end_pos - start_pos).angle()
@@ -37,6 +37,10 @@ func base_shape(end_pos, start_pos, building_base, collision_shape, sprite):
 	# scale the length of the plank
 	collision_shape.shape.extents.x = length/2
 	sprite.scale.x = length/85
+	var Area_shape = rigidbody.get_child(2).get_child(0)
+	print(Area_shape)
+	print(length)
+	Area_shape.shape.extents.x = length/2
 	building_base.get_child(0).player = Game.player
 
 func plank_shape(end_pos, start_pos, building_plank, collision_shape, sprite):
@@ -192,7 +196,7 @@ func _ready():
 			var rigidbody = building_base.get_node_or_null("RigidBody2D")
 			var collision_shape = rigidbody.get_node_or_null("CollisionShape2D")
 			var sprite = rigidbody.get_child(1) # assuming sprite is the second child
-			base_shape(end_pos, start_pos, building_base, collision_shape, sprite)
+			base_shape(end_pos, start_pos, building_base, rigidbody, collision_shape, sprite)
 			add_child(building_base)
 			
 			var positions = base["element_positions"]
