@@ -22,7 +22,13 @@ func define_rope_shape(_end_pos, _start_pos, _building_element, object1, object2
 	object1.add_child(node_b)
 	node_b.global_position = _end_pos + global_position
 	line.setup(node_a, node_b)
-
+	var rope = join as SpringRope
+	if object1 is LaunchBucket:
+		var bucket = object1 as LaunchBucket
+		rope.launched.connect(bucket.fire)
+	if object2 is LaunchBucket:
+		var bucket = object2 as LaunchBucket
+		rope.launched.connect(bucket.fire)
 	# calculate the scale factor
 	var length = (_end_pos - _start_pos).length()
 	#var collision_shape_length = _collision_shape.shape.extents.x * 2

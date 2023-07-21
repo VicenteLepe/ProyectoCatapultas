@@ -46,6 +46,9 @@ rotation = 3.14159
 scale = Vector2(2.25, 2)
 texture = ExtResource("1_a5hxg")
 
+[node name="Marker2D" type="Marker2D" parent="Bucket/RigidBody2D2"]
+position = Vector2(0, 100)
+
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("../Bucket/RigidBody2D2")

@@ -1,5 +1,7 @@
 extends DampedSpringJoint2D
 
+class_name SpringRope
+
 signal launched
 
 var player = ""
@@ -36,18 +38,10 @@ func _physics_process(delta: float) -> void:
 		_tween = create_tween()
 		_tween.tween_property(self, "rest_length", length, back_to_rest_time)
 		_release()
-	
+		
 
 
 func _release():
 	await get_tree().create_timer(release_time).timeout
 	launched.emit()
 	
-		
-	
-		
-		
-	
-	
-		
-		

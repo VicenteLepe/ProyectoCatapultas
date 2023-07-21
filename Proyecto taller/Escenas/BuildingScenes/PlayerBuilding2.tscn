@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c81dsdbo2eusd"]
+[gd_scene load_steps=16 format=3 uid="uid://bq0bbwi3w73p7"]
 
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding2.gd" id="1_ytnwf"]
 [ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="2_b6sl6"]
 [ext_resource type="Texture2D" uid="uid://cux5o1gk1uduc" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="3_o3b3r"]
-[ext_resource type="PackedScene" uid="uid://tqn6kimtaotg" path="res://Escenas/BuildingScenes/Building_Scene2.tscn" id="4_kheor"]
+[ext_resource type="PackedScene" path="res://Escenas/BuildingScenes/Building_Scene2.tscn" id="4_kheor"]
 [ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="5_0dn1y"]
 [ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="6_3cu7v"]
 [ext_resource type="Theme" uid="uid://c4vdxag60q5f1" path="res://Resources/main_menu_theme.tres" id="7_xmc5p"]
