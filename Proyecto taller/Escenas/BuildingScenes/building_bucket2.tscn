@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyxs50tpf0kfi"]
+[gd_scene load_steps=6 format=3 uid="uid://dyxs50tpf0kfi"]
 
-[ext_resource type="Script" path="res://Escenas/BuildingScenes/building_plank.gd" id="1_cnart"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/LaunchBucket.gd" id="1_d0wqf"]
+[ext_resource type="PackedScene" uid="uid://cyue345l6y43a" path="res://Escenas/MainScene/Projectile.tscn" id="2_sarre"]
 [ext_resource type="Texture2D" uid="uid://cjm4rv3msw6je" path="res://Assets/village props/Texture/props cortados/TX Tablon.png" id="2_vqaoe"]
 [ext_resource type="Texture2D" uid="uid://bdpieiuewd0vy" path="res://Assets/village props/Texture/props cortados/TX Bucket.png" id="3_skegu"]
 
@@ -17,7 +18,9 @@ collision_mask = 25
 input_pickable = true
 mass = 0.5
 can_sleep = false
-script = ExtResource("1_cnart")
+script = ExtResource("1_d0wqf")
+projectile_scene = ExtResource("2_sarre")
+player = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_7bspe")
@@ -43,6 +46,9 @@ z_index = 1
 position = Vector2(0, -8)
 scale = Vector2(2.25, 2)
 texture = ExtResource("3_skegu")
+
+[node name="Marker2D" type="Marker2D" parent="Bucket/RigidBody2D2"]
+position = Vector2(0, 100)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 node_a = NodePath("../RigidBody2D")

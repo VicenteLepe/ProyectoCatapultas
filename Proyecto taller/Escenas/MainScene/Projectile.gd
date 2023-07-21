@@ -6,3 +6,5 @@ func _ready():
 	collision_mask = 0
 	collision_layer = 0
 	await get_tree().create_timer(0.2).timeout
+	collision_mask = 1
+	collision_layer = 6

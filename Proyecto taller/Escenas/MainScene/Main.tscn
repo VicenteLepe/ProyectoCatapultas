@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1rjpsn4qbfpm" path="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" id="10_jmmxr"]
 [ext_resource type="Script" path="res://Escenas/MainScene/Camera2D.gd" id="11_bjspy"]
 [ext_resource type="PackedScene" uid="uid://2up2bsa65gjw" path="res://Escenas/Autobuilder.tscn" id="12_mhtgg"]
-[ext_resource type="PackedScene" path="res://Escenas/Autobuilder2.tscn" id="13_rjmlv"]
+[ext_resource type="PackedScene" uid="uid://b6gq3jq5x7upt" path="res://Escenas/Autobuilder2.tscn" id="13_rjmlv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3glge"]
 texture = ExtResource("1_ecqwq")
