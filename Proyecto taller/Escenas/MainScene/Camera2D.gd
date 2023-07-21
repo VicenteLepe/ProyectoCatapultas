@@ -2,7 +2,9 @@ extends Camera2D
 
 func _physics_process(_delta):
 	if not Game.player_A or not Game.player_B:
+		print("A")
 		return
+	print("B")
 	global_position = (Game.player_A.global_position + Game.player_B.global_position)/2
 	var distance = Game.player_A.global_position.distance_to(Game.player_B.global_position)
 	var initial_distance = 900

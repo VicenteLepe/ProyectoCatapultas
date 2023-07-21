@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://biy76pwovb8nj"]
+[gd_scene load_steps=3 format=3 uid="uid://biy76pwovb8nj"]
 
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/SpringRope.gd" id="2_jghiy"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/LineRope.gd" id="2_xna7o"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,6 +15,7 @@ max_compression_percentage = 0.6
 launch_force = 2
 compress_time = 3
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="LineRope" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, -50, 0)
 texture_mode = 1
+script = ExtResource("2_xna7o")
