@@ -28,7 +28,7 @@ script = ExtResource("5_sk776")
 [node name="Base_Builder" type="Node2D" parent="Constructor"]
 script = ExtResource("6_uo81s")
 
-[node name="Bucket_Builder" type="Node2D" parent="Constructor"]
+[node name="Bucket_Builder1" type="Node2D" parent="Constructor"]
 script = ExtResource("7_xjr1u")
 
 [node name="Rope_Builder" type="Node2D" parent="Constructor"]

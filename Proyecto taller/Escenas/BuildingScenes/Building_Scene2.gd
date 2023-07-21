@@ -25,7 +25,7 @@ enum PlayerType {
 # tenemos que poner Game.building_element_dict_A = building_element_dict
 func _input(event):
 	if event.is_action_pressed("save"):
-		save_data_player1()
+		save_data_player2()
 func _ready():
 	match player:
 		PlayerType.A:
@@ -129,10 +129,10 @@ func check_wheels(building_element_dict):
 			for base_dict in building_element_dict.Base:
 				base_dict.element_node.has_wheels = true
 	
-func save_data_player1():
-	var file = FileAccess.open("user://data_player1.json", FileAccess.WRITE)
+func save_data_player2():
+	var file = FileAccess.open("user://data_player2.json", FileAccess.WRITE)
 	file.store_var(building_element_dict)
 
-func _on_continue_button_pressed():
-	save_data_player1()
 
+func _on_continue_button_pressed():
+	save_data_player2()

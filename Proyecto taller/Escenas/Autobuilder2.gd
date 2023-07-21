@@ -1,7 +1,7 @@
 extends Node2D
 
-func load_data_player1():
-	var file = FileAccess.open("user://data_player1.json", FileAccess.READ)
+func load_data_player2():
+	var file = FileAccess.open("user://data_player2.json", FileAccess.READ)
 	var data = file.get_var() 
 	return data
 
@@ -170,7 +170,7 @@ func _ready():
 			Game.player = "B"
 		
 		
-	elements = load_data_player1()
+	elements = load_data_player2()
 	Game.positions_dict = {}
 
 	if "Base" in elements:

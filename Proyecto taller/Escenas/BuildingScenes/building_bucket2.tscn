@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyxs50tpf0kfi"]
+
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/building_plank.gd" id="1_cnart"]
+[ext_resource type="Texture2D" uid="uid://cjm4rv3msw6je" path="res://Assets/village props/Texture/props cortados/TX Tablon.png" id="2_vqaoe"]
+[ext_resource type="Texture2D" uid="uid://bdpieiuewd0vy" path="res://Assets/village props/Texture/props cortados/TX Bucket.png" id="3_skegu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bspe"]
+resource_local_to_scene = true
+size = Vector2(40, 10)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+scale = Vector2(1.0182, 1)
+collision_layer = 16
+collision_mask = 25
+input_pickable = true
+mass = 0.5
+can_sleep = false
+script = ExtResource("1_cnart")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_7bspe")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("2_vqaoe")
+
+[node name="Bucket" type="Node2D" parent="."]
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Bucket"]
+z_index = 1
+collision_layer = 16
+collision_mask = 25
+mass = 0.5
+can_sleep = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bucket/RigidBody2D2"]
+position = Vector2(0, 2.187)
+rotation = 3.14159
+polygon = PackedVector2Array(-31, -21.1875, -22, 8.8125, -14.1684, 8.8125, 22, 8.8125, 31, -21.1875, 27, -21.1875, 19, 2.8125, -19, 2.8125, -27, -21.1875)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bucket/RigidBody2D2"]
+z_index = 1
+position = Vector2(0, 8)
+rotation = 3.14159
+scale = Vector2(2.25, 2)
+texture = ExtResource("3_skegu")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../Bucket/RigidBody2D2")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../Bucket/RigidBody2D2")

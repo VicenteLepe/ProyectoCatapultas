@@ -1,13 +1,12 @@
 extends Builder
-class_name Physics2DServer1
+class_name Physics2DServer2
 var building_element_scene
 var element_type
 @onready var base_builder = $Base_Builder
 @onready var plank_builder = $Plank_Builder
 @onready var wheel_builder = $Wheel_Builder
 @onready var rope_builder = $Rope_Builder
-@onready var bucket_builder_1 = $Bucket_Builder1
-
+@onready var bucket_builder_2 = $Bucket_Builder2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +16,7 @@ func _ready():
 	base_builder.Building_node = Building_node
 	plank_builder.Building_node = Building_node
 	wheel_builder.Building_node = Building_node
-	bucket_builder_1.Building_node = Building_node
+	bucket_builder_2.Building_node = Building_node
 	rope_builder.Building_node = Building_node
 
 
@@ -39,7 +38,7 @@ func _unhandled_input(event):
 		
 	if Building_node.bucket_building_state  and element_type != "Bucket":
 		building_state = Building_node.bucket_building_state
-		building_element_scene = preload("res://Escenas/BuildingScenes/building_bucket.tscn")
+		building_element_scene = preload("res://Escenas/BuildingScenes/building_bucket2.tscn")
 		element_type = "Bucket"
 		
 	if Building_node.rope_building_state and element_type != "Rope":
@@ -87,7 +86,7 @@ func _unhandled_input(event):
 				if element_type == "Wheel":
 					wheel_builder.build_element(building_element_scene, element_type, click_pos)
 				if element_type == "Bucket":
-					bucket_builder_1.build_element(building_element_scene, element_type, click_pos)
+					bucket_builder_2.build_element(building_element_scene, element_type, click_pos)
 				if element_type == "Rope":
 					rope_builder.build_element(building_element_scene, element_type, click_pos)
 

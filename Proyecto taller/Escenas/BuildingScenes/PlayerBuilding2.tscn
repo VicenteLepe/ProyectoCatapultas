@@ -1,17 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://p0rth33fp1rp"]
+[gd_scene load_steps=16 format=3 uid="uid://c81dsdbo2eusd"]
 
-[ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding.gd" id="1_flj1r"]
-[ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="3_m0i3s"]
-[ext_resource type="Texture2D" uid="uid://cux5o1gk1uduc" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="4_8muyl"]
-[ext_resource type="PackedScene" uid="uid://kfp1qdpiwmrf" path="res://Escenas/BuildingScenes/Building_Scene.tscn" id="4_woudb"]
-[ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="5_jb36m"]
-[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="5_ldglv"]
-[ext_resource type="FontFile" uid="uid://jwpyp2vwtpxc" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.otf" id="8_dqxm8"]
-[ext_resource type="Theme" uid="uid://c4vdxag60q5f1" path="res://Resources/main_menu_theme.tres" id="8_nkjwi"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding2.gd" id="1_ytnwf"]
+[ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="2_b6sl6"]
+[ext_resource type="Texture2D" uid="uid://cux5o1gk1uduc" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="3_o3b3r"]
+[ext_resource type="PackedScene" uid="uid://tqn6kimtaotg" path="res://Escenas/BuildingScenes/Building_Scene2.tscn" id="4_kheor"]
+[ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="5_0dn1y"]
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="6_3cu7v"]
+[ext_resource type="Theme" uid="uid://c4vdxag60q5f1" path="res://Resources/main_menu_theme.tres" id="7_xmc5p"]
+[ext_resource type="FontFile" uid="uid://jwpyp2vwtpxc" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.otf" id="8_mbqon"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neowe"]
 resource_name = "Interiors"
-texture = ExtResource("3_m0i3s")
+texture = ExtResource("2_b6sl6")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -779,7 +779,7 @@ texture = ExtResource("3_m0i3s")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jra86"]
 resource_name = "Exteriors"
-texture = ExtResource("4_8muyl")
+texture = ExtResource("3_o3b3r")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1960,7 +1960,7 @@ sources/0 = SubResource("TileSetAtlasSource_neowe")
 sources/3 = SubResource("TileSetAtlasSource_jra86")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5cbwh"]
-texture = ExtResource("4_8muyl")
+texture = ExtResource("3_o3b3r")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2367,7 +2367,7 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_flj1r")
+script = ExtResource("1_ytnwf")
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -2384,10 +2384,9 @@ tile_set = SubResource("TileSet_6plce")
 format = 2
 layer_0/tile_data = PackedInt32Array(393232, 1310720, 11, 458768, 1310720, 11, 262160, 1310720, 9, 327696, 1310720, 10, 262159, 1245184, 9, 262158, 1179648, 9, 262157, 1114112, 9, 327693, 1114112, 10, 393229, 1114112, 10, 458766, 1179648, 12, 393230, 1179648, 11, 327694, 1179648, 10, 327695, 1245184, 10, 393231, 1245184, 11, 458767, 1245184, 12, 458765, 1114112, 11, 458764, 196608, 10, 458763, 131072, 10, 458762, 65536, 10, 458769, 917504, 3, 131088, 1310720, 8, 65552, 1310720, 7, 131075, 1310720, 8, 131078, 1310720, 8, 131085, 1310720, 8, 65549, 1310720, 7, 65542, 1310720, 7, 65539, 1310720, 7, 458755, 851968, 5, 458756, 917504, 5)
 
-[node name="Building" parent="." instance=ExtResource("4_woudb")]
-position = Vector2(-1, -26)
-
 [node name="Delete" type="Node2D" parent="."]
+
+[node name="Building2" parent="." instance=ExtResource("4_kheor")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(323, 141)
@@ -2396,14 +2395,14 @@ position = Vector2(323, 141)
 layout_mode = 3
 anchors_preset = 0
 
-[node name="to Main Menu" type="Button" parent="Camera2D/UI"]
+[node name="to player 1" type="Button" parent="Camera2D/UI"]
 layout_mode = 0
 offset_left = -314.0
 offset_top = 139.0
 offset_right = -155.0
 offset_bottom = 172.0
-theme = ExtResource("5_jb36m")
-text = "To Main Menu"
+theme = ExtResource("5_0dn1y")
+text = "To Player 1 turn"
 
 [node name="Continue_button" type="Button" parent="Camera2D/UI"]
 custom_minimum_size = Vector2(10, 0)
@@ -2412,8 +2411,8 @@ offset_left = 197.0
 offset_top = 140.0
 offset_right = 313.0
 offset_bottom = 172.0
-theme = ExtResource("5_jb36m")
-theme_override_fonts/font = ExtResource("5_ldglv")
+theme = ExtResource("5_0dn1y")
+theme_override_fonts/font = ExtResource("6_3cu7v")
 theme_override_font_sizes/font_size = 25
 action_mode = 0
 text = "Continue"
@@ -2424,7 +2423,7 @@ offset_left = -309.0
 offset_top = -64.0
 offset_right = -237.0
 offset_bottom = -33.0
-theme = ExtResource("8_nkjwi")
+theme = ExtResource("7_xmc5p")
 toggle_mode = false
 item_count = 6
 selected = 0
@@ -2456,19 +2455,19 @@ offset_right = 1561.4
 offset_bottom = 34.4192
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("8_dqxm8")
+theme_override_fonts/font = ExtResource("8_mbqon")
 theme_override_font_sizes/font_size = 32
 text = "You can press the p key once to unlock the building, once more to lock it,  r key to reset the scene and if you want to delete something you can press right mouse click on them."
 
-[node name="Player 1" type="Label" parent="."]
+[node name="Player 2" type="Label" parent="."]
 offset_left = 37.0
 offset_top = -30.0
 offset_right = 119.0
 offset_bottom = -4.0
 size_flags_horizontal = 0
-text = "Player 1"
+text = "Player 2"
 
-[connection signal="pressed" from="Camera2D/UI/to Main Menu" to="." method="_on_to_main_menu_pressed"]
+[connection signal="pressed" from="Camera2D/UI/to player 1" to="." method="_on_to_player_1_pressed"]
 [connection signal="pressed" from="Camera2D/UI/Continue_button" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="Camera2D/UI/Continue_button" to="Building" method="_on_continue_button_pressed"]
-[connection signal="item_selected" from="Camera2D/UI/Select_element_button" to="Building" method="_on_select_element_button_item_selected"]
+[connection signal="pressed" from="Camera2D/UI/Continue_button" to="Building2" method="_on_continue_button_pressed"]
+[connection signal="item_selected" from="Camera2D/UI/Select_element_button" to="Building2" method="_on_select_element_button_item_selected"]

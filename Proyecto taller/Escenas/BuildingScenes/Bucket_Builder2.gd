@@ -1,6 +1,6 @@
 extends Builder
 
-class_name Bucket_builder1
+class_name Bucket_builder2
 
 func define_element_shape(_end_pos, _start_pos, _building_element, _rigidbody, _collision_shape, _sprite):		
 	# define the position of the plank
