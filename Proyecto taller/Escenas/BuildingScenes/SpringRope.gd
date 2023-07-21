@@ -2,6 +2,8 @@ extends DampedSpringJoint2D
 
 signal launched
 
+var player = ""
+
 @export var compression_speed = 300
 @export var max_compression_percentage = 0.75
 @export var launch_force = 3
@@ -19,12 +21,15 @@ func _ready() -> void:
 	rest_length = length
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("shoot"):
+	if player == "":
+		return
+	var shoot = "shoot_"+player
+	if Input.is_action_just_pressed(shoot):
 		if _tween:
 			_tween.kill()
 		_tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		_tween.tween_property(self, "rest_length", length * (1 - max_compression_percentage), compress_time)
-	if Input.is_action_just_released("shoot"):
+	if Input.is_action_just_released(shoot):
 		rest_length = launch_force * length
 		if _tween:
 			_tween.kill()

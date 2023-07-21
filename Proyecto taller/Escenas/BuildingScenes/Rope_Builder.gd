@@ -20,3 +20,5 @@ func define_rope_shape(_end_pos, _start_pos, _building_element, object1, object2
 	# scale the length of the plank
 	#_collision_shape.shape.extents.x = length/2 
 	#_sprite.scale.x = scale_factor
+	
+	_building_element.get_child(0).player = Game.player

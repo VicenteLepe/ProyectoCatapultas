@@ -9,7 +9,7 @@ func load_data_player2():
 var building_base_scene = preload("res://Escenas/BuildingScenes/building_base.tscn")
 var building_plank_scene = preload("res://Escenas/BuildingScenes/building_plank.tscn")
 var building_wheel_scene = preload("res://Escenas/BuildingScenes/building_wheel.tscn")
-var building_bucket_scene = preload("res://Escenas/BuildingScenes/building_bucket.tscn")
+var building_bucket_scene = preload("res://Escenas/BuildingScenes/building_bucket2.tscn")
 var building_rope_scene = preload("res://Escenas/BuildingScenes/building_rope.tscn")
 
 var test_dictionary = preload("res://Escenas/test_dictionary.tscn")
@@ -83,11 +83,11 @@ func bucket_shape(end_pos, start_pos, building_bucket, collision_shape, sprite):
 	collision_shape.shape.extents.x = length/2 
 	sprite.scale.x = scale_factor
 
-func rope_shape(_end_pos, _start_pos, _building_element, object1, object2):		
+func rope_shape(_end_pos, _start_pos, building_rope, object1, object2):		
 	# define the position of the plank
-	_building_element.position = (_start_pos + _end_pos) / 2
-	_building_element.rotation = (_end_pos - _start_pos).angle()
-	var join = _building_element.get_node_or_null("SpringRope")
+	building_rope.position = (_start_pos + _end_pos) / 2
+	building_rope.rotation = (_end_pos - _start_pos).angle()
+	var join = building_rope.get_node_or_null("SpringRope")
 	join.length = (_end_pos - _start_pos).length()
 	join.position = Vector2((_end_pos - _start_pos).length()/2,0)
 	join.node_a = object1.get_path()
@@ -101,6 +101,8 @@ func rope_shape(_end_pos, _start_pos, _building_element, object1, object2):
 	# scale the length of the plank
 	#_collision_shape.shape.extents.x = length/2 
 	#_sprite.scale.x = scale_factor
+	
+	building_rope.get_child(0).player = Game.player
 
 
 func populate_intersection_dict(elements):
@@ -261,5 +263,5 @@ func _ready():
 		
 	populate_intersection_dict(elements)
 	create_pinjoints(intersections)
-#	#check_wheels(elements)
+	check_wheels(elements)
 

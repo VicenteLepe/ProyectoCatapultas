@@ -2387,6 +2387,7 @@ layer_0/tile_data = PackedInt32Array(393232, 1310720, 11, 458768, 1310720, 11, 2
 [node name="Delete" type="Node2D" parent="."]
 
 [node name="Building2" parent="." instance=ExtResource("4_kheor")]
+player = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(323, 141)

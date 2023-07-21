@@ -35,14 +35,12 @@ mass = 0.5
 can_sleep = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bucket/RigidBody2D2"]
-position = Vector2(0, 2.187)
-rotation = 3.14159
+position = Vector2(0, -2.5)
 polygon = PackedVector2Array(-31, -21.1875, -22, 8.8125, -14.1684, 8.8125, 22, 8.8125, 31, -21.1875, 27, -21.1875, 19, 2.8125, -19, 2.8125, -27, -21.1875)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bucket/RigidBody2D2"]
 z_index = 1
-position = Vector2(0, 8)
-rotation = 3.14159
+position = Vector2(0, -8)
 scale = Vector2(2.25, 2)
 texture = ExtResource("3_skegu")
 
