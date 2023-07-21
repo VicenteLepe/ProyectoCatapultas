@@ -18,5 +18,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 		rope_requested.emit()
 		
 func take_damage():
-	print("Auch plank")
-	print(player)
+	if player == "A":
+		Game.player_1_health -= 3
+	if player == "B":
+		Game.player_2_health -= 3

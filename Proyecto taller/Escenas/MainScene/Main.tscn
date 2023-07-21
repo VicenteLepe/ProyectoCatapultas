@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cii6w56etu1mq"]
+[gd_scene load_steps=21 format=3 uid="uid://cii6w56etu1mq"]
 
 [ext_resource type="Texture2D" uid="uid://damhjfjsf71wt" path="res://Assets/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0_editada.png" id="1_ecqwq"]
 [ext_resource type="PackedScene" uid="uid://dx0rs7bmjp5x2" path="res://Escenas/MenuScenes/pause_menu.tscn" id="4_pp08s"]
@@ -12,6 +12,11 @@
 [ext_resource type="Script" path="res://Escenas/MainScene/Camera2D.gd" id="11_bjspy"]
 [ext_resource type="PackedScene" uid="uid://2up2bsa65gjw" path="res://Escenas/Autobuilder.tscn" id="12_mhtgg"]
 [ext_resource type="PackedScene" uid="uid://b6gq3jq5x7upt" path="res://Escenas/Autobuilder2.tscn" id="13_rjmlv"]
+[ext_resource type="Script" path="res://Escenas/MainScene/Jugador_1_vida.gd" id="13_yxmk5"]
+[ext_resource type="Script" path="res://Escenas/MainScene/Jugador_2_vida.gd" id="14_k7foc"]
+[ext_resource type="Theme" uid="uid://pfwd8r771uta" path="res://Resources/theme_ progressbar.tres" id="14_xrvdd"]
+[ext_resource type="PackedScene" uid="uid://5i3h3qkspjv3" path="res://Escenas/MenuScenes/Victory_menu.tscn" id="15_e5hej"]
+[ext_resource type="PackedScene" uid="uid://bjryf5ne3jkq2" path="res://Escenas/MenuScenes/Victory_menu2.tscn" id="16_pqjr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3glge"]
 texture = ExtResource("1_ecqwq")
@@ -771,10 +776,10 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Autobuilder" parent="." instance=ExtResource("12_mhtgg")]
-position = Vector2(63, 1)
+position = Vector2(30, -4)
 
 [node name="Autobuilder2" parent="." instance=ExtResource("13_rjmlv")]
-position = Vector2(639, 2)
+position = Vector2(2000, 0)
 player = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -783,3 +788,50 @@ zoom = Vector2(0.5, 0.5)
 process_callback = 0
 limit_bottom = 500
 script = ExtResource("11_bjspy")
+
+[node name="Jugador_1_vida" type="MarginContainer" parent="Camera2D"]
+offset_left = -630.0
+offset_top = -420.0
+offset_right = -480.0
+offset_bottom = -393.0
+scale = Vector2(2, 2)
+script = ExtResource("13_yxmk5")
+metadata/_edit_group_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Jugador_1_vida"]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme = ExtResource("14_xrvdd")
+value = 100.0
+
+[node name="Jugador_2_vida" type="MarginContainer" parent="Camera2D"]
+offset_left = 480.0
+offset_top = -417.0
+offset_right = 630.0
+offset_bottom = -390.0
+scale = Vector2(2, 2)
+script = ExtResource("14_k7foc")
+metadata/_edit_group_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Jugador_2_vida"]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("14_xrvdd")
+value = 100.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Victory_menu" parent="CanvasLayer2" instance=ExtResource("15_e5hej")]
+offset_left = 221.0
+offset_top = 90.0
+offset_right = 401.0
+offset_bottom = 280.0
+
+[node name="Victory_menu2" parent="CanvasLayer2" instance=ExtResource("16_pqjr7")]
+offset_left = 221.0
+offset_top = 85.0
+offset_right = 401.0
+offset_bottom = 275.0

@@ -29,6 +29,4 @@ func fire():
 		projectile.queue_free()
 		projectile = null
 		
-func take_damage():
-	print("Auch bucket")
-	print("B")
+

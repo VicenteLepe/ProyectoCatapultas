@@ -48,6 +48,7 @@ text = "Start Game"
 
 [node name="How-to-play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "How to play"
 

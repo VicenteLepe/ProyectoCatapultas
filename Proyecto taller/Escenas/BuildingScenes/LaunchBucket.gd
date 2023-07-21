@@ -47,8 +47,7 @@ func fire():
 		projectile = null
 		
 func take_damage():
-	print("Auch bucket")
-	if player==0:
-		print("A")
-	if player==1:
-		print("B")
+	if player ==0:
+		Game.player_1_health -= 5
+	if player == 1:
+		Game.player_2_health -= 5

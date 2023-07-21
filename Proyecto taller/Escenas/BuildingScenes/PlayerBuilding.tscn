@@ -2333,31 +2333,31 @@ sources/0 = SubResource("TileSetAtlasSource_5cbwh")
 [sub_resource type="Animation" id="Animation_vguet"]
 resource_name = "animation_label"
 length = 44.0
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label:position")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 26, 40),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(646, 2), Vector2(-1621, 1), Vector2(11, 2)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(41.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"hide_label"
 }]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20, 40),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(646, 2), Vector2(-2301, 1), Vector2(2, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nyhhu"]
@@ -2471,15 +2471,14 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-offset_left = 628.562
-offset_top = 1.99231
-offset_right = 2860.57
-offset_bottom = 34.9923
+offset_left = 2.0
+offset_right = 2936.0
+offset_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("8_dqxm8")
 theme_override_font_sizes/font_size = 32
-text = "You can press the p key once to unlock the building, once more to lock it,  r key to reset the scene and if you want to delete something you can press right mouse click on them."
+text = "You can press the p key once to unlock the building, once more to lock it,  r key to reset the scene and if you want to delete something you can press right mouse click on them. Player 1 control the catapult with the keys A, S and D."
 
 [node name="AnimationPlayer_segundo" type="AnimationPlayer" parent="."]
 libraries = {

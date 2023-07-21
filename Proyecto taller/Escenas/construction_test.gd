@@ -172,6 +172,7 @@ func check_wheels(elements):
 
 
 func _ready():
+	Game.player_1_health = Game.player_1_health_max
 	
 	match player:
 		PlayerType.A:

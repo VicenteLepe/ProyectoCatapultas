@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Escenas/BuildingScenes/PlayerBuilding2.gd" id="1_ytnwf"]
 [ext_resource type="Texture2D" uid="uid://b5p01g7qtlx5d" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="2_b6sl6"]
 [ext_resource type="Texture2D" uid="uid://cux5o1gk1uduc" path="res://Assets/Legacy-Fantasy - High Forest 2.0/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="3_o3b3r"]
-[ext_resource type="PackedScene" path="res://Escenas/BuildingScenes/Building_Scene2.tscn" id="4_kheor"]
+[ext_resource type="PackedScene" uid="uid://tqn6kimtaotg" path="res://Escenas/BuildingScenes/Building_Scene2.tscn" id="4_kheor"]
 [ext_resource type="Theme" uid="uid://dsywomyv2wuwp" path="res://Resources/button_continue_theme.tres" id="5_0dn1y"]
 [ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="6_3cu7v"]
 [ext_resource type="Theme" uid="uid://c4vdxag60q5f1" path="res://Resources/main_menu_theme.tres" id="7_xmc5p"]
@@ -2333,31 +2333,31 @@ sources/0 = SubResource("TileSetAtlasSource_5cbwh")
 [sub_resource type="Animation" id="Animation_vguet"]
 resource_name = "animation_label"
 length = 44.0
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label:position")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 26, 40),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(646, 2), Vector2(-1621, 1), Vector2(11, 2)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(41.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"hide_label"
 }]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 19.9, 40),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(644, 0), Vector2(-2463, 1), Vector2(2, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nyhhu"]
@@ -2471,15 +2471,14 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-offset_left = 628.562
-offset_top = 1.99231
-offset_right = 2860.57
-offset_bottom = 34.9923
+offset_left = 644.0
+offset_right = 3748.0
+offset_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("8_mbqon")
 theme_override_font_sizes/font_size = 32
-text = "You can press the p key once to unlock the building, once more to lock it,  r key to reset the scene and if you want to delete something you can press right mouse click on them."
+text = "You can press the p key once to unlock the building, once more to lock it,  r key to reset the scene and if you want to delete something you can press right mouse click on them. Player 2 control the catapult with the arrows Left, Right and Down."
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {

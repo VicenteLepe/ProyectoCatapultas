@@ -27,5 +27,7 @@ func _physics_process(_delta):
 		set_linear_velocity(Vector2((get_linear_velocity().x - get_linear_velocity().x * 0.5), get_linear_velocity().y))
 
 func take_damage():
-	print("Auch base")
-	print(player)
+	if player == "A":
+		Game.player_1_health -= 20
+	if player == "B":
+		Game.player_2_health -= 20
