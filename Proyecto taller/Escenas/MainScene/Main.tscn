@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cii6w56etu1mq"]
+[gd_scene load_steps=22 format=3 uid="uid://cii6w56etu1mq"]
 
 [ext_resource type="Texture2D" uid="uid://damhjfjsf71wt" path="res://Assets/miguelsgp Itch Dungeon Tileset 64x64/Dark_lvl0_editada.png" id="1_ecqwq"]
 [ext_resource type="PackedScene" uid="uid://dx0rs7bmjp5x2" path="res://Escenas/MenuScenes/pause_menu.tscn" id="4_pp08s"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1rjpsn4qbfpm" path="res://Assets/backgrounds/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" id="10_jmmxr"]
 [ext_resource type="Script" path="res://Escenas/MainScene/Camera2D.gd" id="11_bjspy"]
 [ext_resource type="PackedScene" uid="uid://2up2bsa65gjw" path="res://Escenas/Autobuilder.tscn" id="12_mhtgg"]
+[ext_resource type="Theme" uid="uid://x42jp6uslm5t" path="res://Resources/credit_theme_titules.tres" id="13_nfha8"]
 [ext_resource type="PackedScene" uid="uid://b6gq3jq5x7upt" path="res://Escenas/Autobuilder2.tscn" id="13_rjmlv"]
 [ext_resource type="Script" path="res://Escenas/MainScene/Jugador_1_vida.gd" id="13_yxmk5"]
 [ext_resource type="Script" path="res://Escenas/MainScene/Jugador_2_vida.gd" id="14_k7foc"]
@@ -790,11 +791,12 @@ limit_bottom = 500
 script = ExtResource("11_bjspy")
 
 [node name="Jugador_1_vida" type="MarginContainer" parent="Camera2D"]
-offset_left = -630.0
-offset_top = -420.0
-offset_right = -480.0
-offset_bottom = -393.0
-scale = Vector2(2, 2)
+offset_right = 150.0
+offset_bottom = 26.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("13_nfha8")
 script = ExtResource("13_yxmk5")
 metadata/_edit_group_ = true
 
@@ -806,12 +808,25 @@ size_flags_vertical = 1
 theme = ExtResource("14_xrvdd")
 value = 100.0
 
+[node name="Label" type="Label" parent="Camera2D/Jugador_1_vida"]
+layout_mode = 2
+theme = ExtResource("13_nfha8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Player 1"
+vertical_alignment = 2
+
 [node name="Jugador_2_vida" type="MarginContainer" parent="Camera2D"]
-offset_left = 480.0
-offset_top = -417.0
-offset_right = 630.0
-offset_bottom = -390.0
-scale = Vector2(2, 2)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 326.0
+offset_top = -408.0
+offset_right = 476.0
+offset_bottom = -381.0
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("13_nfha8")
 script = ExtResource("14_k7foc")
 metadata/_edit_group_ = true
 
@@ -821,6 +836,16 @@ layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("14_xrvdd")
 value = 100.0
+fill_mode = 1
+
+[node name="Label" type="Label" parent="Camera2D/Jugador_2_vida"]
+layout_mode = 2
+theme = ExtResource("13_nfha8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Player 2"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
