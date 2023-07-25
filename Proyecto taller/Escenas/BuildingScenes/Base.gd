@@ -26,8 +26,15 @@ func _physics_process(_delta):
 	else:
 		set_linear_velocity(Vector2((get_linear_velocity().x - get_linear_velocity().x * 0.5), get_linear_velocity().y))
 
-func take_damage():
-	if player == "A":
+func take_damage(hit):
+	if hit<300:
+		pass
+	elif player == "A":
 		Game.player_1_health -= 20
-	if player == "B":
+	elif player == "B":
 		Game.player_2_health -= 20
+	elif hit>1000:
+		if player == "A":
+			Game.player_1_health -= 40
+		if player == "B":
+			Game.player_2_health -= 40

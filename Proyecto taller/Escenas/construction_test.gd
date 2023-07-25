@@ -169,6 +169,7 @@ func check_wheels(elements):
 		if "Base" in elements:
 			for base_dict in elements.Base:
 				base_dict.element_node.has_wheels = true
+				
 
 
 func _ready():

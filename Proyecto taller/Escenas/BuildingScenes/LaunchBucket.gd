@@ -9,12 +9,14 @@ var projectile: Projectile
 signal rope_requested
 signal delete_requested
 
+
 enum PlayerType {
 	A, 
 	B
 }
 
 @export var player: PlayerType
+
 
 func _ready():
 	input_event.connect(_on_input_event)
@@ -38,16 +40,21 @@ func fire():
 		projectile = projectile_scene.instantiate() as Projectile
 		get_tree().root.add_child(projectile)
 		projectile.position = bucket.global_position
-		if player==0:
-			projectile.apply_central_impulse(1000*bucket.global_position.direction_to(marker.global_position))
-		if player==1:
-			projectile.apply_central_impulse(-1000*bucket.global_position.direction_to(marker.global_position))
-		await get_tree().create_timer(2).timeout
+		projectile.apply_central_impulse(bucket.angular_velocity*350*bucket.global_position.direction_to(marker.global_position))
+		await get_tree().create_timer(3.5).timeout
 		projectile.queue_free()
 		projectile = null
 		
-func take_damage():
-	if player ==0:
-		Game.player_1_health -= 5
-	if player == 1:
-		Game.player_2_health -= 5
+func take_damage(hit):
+	if hit<300:
+		pass
+	elif player ==0:
+		Game.player_1_health -= 10
+	elif player == 1:
+		Game.player_2_health -= 10
+	elif hit>1000:
+		if player ==0:
+			Game.player_1_health -= 20
+		if player == 1:
+			Game.player_2_health -= 20
+		

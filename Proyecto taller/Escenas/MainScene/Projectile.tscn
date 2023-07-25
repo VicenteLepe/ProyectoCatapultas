@@ -8,7 +8,6 @@
 radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rny7j"]
-radius = 11.0
 
 [node name="Projectile" type="RigidBody2D"]
 collision_layer = 32
@@ -17,6 +16,7 @@ mass = 100.0
 script = ExtResource("1_4124x")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 31
 script = ExtResource("2_0ew07")
@@ -26,10 +26,11 @@ shape = SubResource("CircleShape2D_ersip")
 
 [node name="TxProjectile" type="Sprite2D" parent="."]
 position = Vector2(0, 3.57628e-07)
-scale = Vector2(1, 1.33333)
+scale = Vector2(2, 2.666)
 texture = ExtResource("1_2q44d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_rny7j")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

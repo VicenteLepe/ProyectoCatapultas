@@ -6,6 +6,10 @@ extends MarginContainer
 @onready var camera = $".."
 @onready var autobuilder = $"../../Autobuilder"
 
+func destroy_catapult():
+	
+	pass
+
 
 func _physics_process(delta):
 	
@@ -17,7 +21,7 @@ func _physics_process(delta):
 	if Game.player_1_health<=0 :
 		await get_tree().create_timer(0.5).timeout
 		victory_menu_2.visible =true
-		print(autobuilder.intersections)
+		destroy_catapult()
 	
 
 

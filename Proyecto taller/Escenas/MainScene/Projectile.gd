@@ -16,15 +16,18 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body):
+	print(body)
+	print(self.linear_velocity.length())
 	if body is player_base:
 		if body.has_method("take_damage"):
-			body.take_damage()
+			body.take_damage(self.linear_velocity.length())
 	if body is player_plank:
 		if body.has_method("take_damage"):
-			body.take_damage()
+			body.take_damage(self.linear_velocity.length())
 	if body is LaunchBucket:
 		if body.has_method("take_damage"):
-			body.take_damage()
-	if body is LaunchBucket2:
+			body.take_damage(self.linear_velocity.length())
+	if body is player_wheel:
 		if body.has_method("take_damage"):
-			body.take_damage()
+			body.take_damage(self.linear_velocity.length())
+			
