@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Proyecto taller: catapultas"
+config/name="Siege Engineers"
 run/main_scene="res://Escenas/MenuScenes/menu_inicial.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/village props/Texture/props cortados/TX Wheel.png"
 
 [autoload]
 
