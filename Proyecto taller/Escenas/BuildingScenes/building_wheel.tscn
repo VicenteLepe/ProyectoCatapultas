@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfmm0f2tubqfs" path="res://Assets/village props/Texture/props cortados/TX Wheel.png" id="1_u0c7h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgni8"]
+resource_local_to_scene = true
 
 [node name="building_wheel" type="Node2D"]
 

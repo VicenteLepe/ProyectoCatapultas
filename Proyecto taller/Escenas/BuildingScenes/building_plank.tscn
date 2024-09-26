@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cjm4rv3msw6je" path="res://Assets/village props/Texture/props cortados/TX Tablon.png" id="1_uyjgu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ron0e"]
+resource_local_to_scene = true
 size = Vector2(40, 10)
 
 [node name="building_plank" type="Node2D"]
@@ -11,7 +12,6 @@ size = Vector2(40, 10)
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 2
 collision_mask = 3
-freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_ron0e")
