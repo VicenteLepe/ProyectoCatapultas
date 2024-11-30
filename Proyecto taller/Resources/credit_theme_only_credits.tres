@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://72o7dmakwn2w"]
+
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="1_yj8x0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlttk"]
+content_margin_left = 20.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+
+[resource]
+default_font = ExtResource("1_yj8x0")
+default_font_size = 24
+Label/colors/font_color = Color(0.937255, 0.721569, 0.0627451, 1)
+Label/font_sizes/font_size = 36
+Label/fonts/font = ExtResource("1_yj8x0")
+Label/styles/normal = SubResource("StyleBoxEmpty_nlttk")

@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://ber6rgp6joi85" path="res://Resources/pause_theme.tres" id="1_kw3be"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8old6"]
-bg_color = Color(0, 0.560784, 0.223529, 1)
+bg_color = Color(0.0901961, 0.52549, 0.537255, 1)
 
 [node name="PauseMenu" type="MarginContainer"]
 process_mode = 3

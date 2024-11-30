@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bpcjhox8d7iwh"]
+
+[ext_resource type="FontFile" uid="uid://dy68xt1xh8c8y" path="res://Assets/font assets/compass-pro-v1.1/CompassPro.ttf" id="1_6tvfl"]
+
+[resource]
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_6tvfl")

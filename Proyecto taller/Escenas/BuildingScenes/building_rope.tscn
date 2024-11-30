@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://biy76pwovb8nj"]
+
+[ext_resource type="Texture2D" uid="uid://dhd0mm5meic33" path="res://Assets/village props/Texture/props cortados/TX rope segment.png" id="2_552de"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/SpringRope.gd" id="2_jghiy"]
+[ext_resource type="Script" path="res://Escenas/BuildingScenes/LineRope.gd" id="2_xna7o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SpringRope" type="DampedSpringJoint2D" parent="."]
+rotation = 1.5708
+length = 51.0
+stiffness = 64.0
+damping = 0.24
+script = ExtResource("2_jghiy")
+max_compression_percentage = 0.6
+launch_force = 2
+compress_time = 3
+
+[node name="LineRope" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, -50, 0)
+texture = ExtResource("2_552de")
+texture_mode = 2
+script = ExtResource("2_xna7o")

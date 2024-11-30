@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://5i3h3qkspjv3"]
+
+[ext_resource type="Theme" uid="uid://ber6rgp6joi85" path="res://Resources/pause_theme.tres" id="1_3y022"]
+[ext_resource type="Script" path="res://Escenas/MenuScenes/Victory_menu.gd" id="2_1tx3q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl0cd"]
+bg_color = Color(0.0901961, 0.52549, 0.537255, 1)
+
+[node name="Victory_menu" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_3y022")
+script = ExtResource("2_1tx3q")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_vl0cd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"Biglevel"
+theme_override_colors/font_color = Color(0.937255, 0.721569, 0.0627451, 1)
+theme_override_font_sizes/font_size = 48
+text = "Victory
+Player 1"
+horizontal_alignment = 1
+
+[node name="Rematch" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rematch"
+
+[node name="Main" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main menu"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Rematch" to="." method="_on_rematch_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Main" to="." method="_on_main_pressed"]

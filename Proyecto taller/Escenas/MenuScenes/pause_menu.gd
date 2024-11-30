@@ -3,10 +3,12 @@ extends MarginContainer
 @onready var resume = %Resume
 @onready var main = %Main
 @onready var exit = %Exit
+@onready var pause_menu = $"."
 
 
 
 func _ready():
+	get_tree().paused = false
 	resume.pressed.connect(_on_resume_pressed)
 	main.pressed.connect(_on_main_pressed)
 	exit.pressed.connect(_on_exit_pressed)
@@ -14,8 +16,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("pause"):
-		show()
-		get_tree().paused = true
+		pause_menu.visible = !pause_menu.visible
+		get_tree().paused = !get_tree().paused
 		
 func _on_resume_pressed():
 	hide()
